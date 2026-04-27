@@ -1,0 +1,28 @@
+.paper {
+  margin-bottom: var(--spacing-1);
+  padding: var(--spacing-sm);
+}
+
+.degree {
+  margin-bottom: var(--spacing-xs);
+}
+
+.school {
+  line-height: var(--line-height-normal);
+}
+
+@media print {
+  .paper {
+    margin-bottom: var(--spacing-xs);
+    padding: var(--spacing-2xs) var(--spacing-sm);
+  }
+
+  .degree {
+    margin-bottom: 0;
+    font-size: 0.85rem;
+  }
+
+  .school {
+    font-size: 0.7rem;
+  }
+}
