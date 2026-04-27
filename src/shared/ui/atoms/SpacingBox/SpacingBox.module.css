@@ -1,0 +1,11 @@
+.sm {
+  margin-bottom: var(--spacing-sm);
+}
+
+.md {
+  margin-bottom: var(--spacing-md);
+}
+
+.lg {
+  margin-bottom: var(--spacing-lg);
+}

@@ -1,0 +1,8 @@
+.root {
+  width: var(--size-separator-dot);
+  height: var(--size-separator-dot);
+  border-radius: var(--radius-full);
+  background-color: var(--color-primary);
+  opacity: 0.5;
+  flex-shrink: 0;
+}
