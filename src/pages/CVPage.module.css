@@ -1,0 +1,83 @@
+.root {
+  position: relative;
+  isolation: isolate;
+  min-height: 100vh;
+  background-color: var(--color-background-default);
+  background-image: var(--gradient-page-wash), var(--gradient-background);
+  background-repeat: no-repeat;
+}
+
+.root::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.04;
+  background-image: var(--texture-grain);
+  background-size: var(--texture-grain-tile) var(--texture-grain-tile);
+  mix-blend-mode: multiply;
+}
+
+.root > * {
+  position: relative;
+  z-index: 1;
+}
+
+/**
+ * Colonne max large MUI (lg) ; marges ici.
+ */
+.mainCapture {
+  --page-inline: clamp(1rem, 4.5vw, 1.75rem);
+  max-width: 100%;
+  box-sizing: border-box;
+  padding-inline: var(--page-inline);
+  padding-top: var(--spacing-md);
+  padding-bottom: var(--spacing-xl);
+}
+
+.grid {
+  align-items: flex-start;
+}
+
+/**
+ * Impression A4 (Ctrl+P) : on laisse @page gérer les marges et on neutralise
+ * les contraintes plein-écran qui n’ont pas de sens en print. La viewport
+ * d’impression (~720 px) est en-dessous du breakpoint MUI `md` (900 px) :
+ * sans override, la grille tombe sur la variante mobile et empile les colonnes.
+ * On rétablit donc à la main la disposition 4/8 (sidebar / main).
+ */
+@media print {
+  .root {
+    min-height: 0;
+  }
+
+  .root::before {
+    display: none;
+  }
+
+  .mainCapture {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  .grid {
+    flex-wrap: nowrap !important;
+  }
+
+  .grid > :global(.MuiGrid-item):first-child {
+    flex-basis: 33.3333% !important;
+    flex-grow: 0 !important;
+    max-width: 33.3333% !important;
+  }
+
+  .grid > :global(.MuiGrid-item):nth-child(2) {
+    flex-basis: 66.6667% !important;
+    flex-grow: 0 !important;
+    max-width: 66.6667% !important;
+  }
+
+  .grid :global(.MuiPaper-root) {
+    position: static !important;
+  }
+}
