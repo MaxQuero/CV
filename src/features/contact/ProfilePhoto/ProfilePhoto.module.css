@@ -1,0 +1,83 @@
+/* Cadre type portrait pro — bordure ton sauge, fond cohérent avec le panneau en-tête */
+.frame {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 6.5rem;
+  height: 8rem;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background: var(--color-background-paper);
+  background-image: linear-gradient(
+    160deg,
+    var(--surface-raised) 0%,
+    var(--color-background-paper) 45%,
+    rgb(var(--rgb-tertiary) / 0.12) 100%
+  );
+  border: 1.5px solid var(--color-border);
+  box-shadow: var(--shadow-sm);
+}
+
+@media (min-width: 900px) {
+  .frame {
+    width: 7.25rem;
+    height: 8.75rem;
+  }
+}
+
+.stamp {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.09;
+  background-image: var(--texture-grain);
+  background-size: var(--texture-grain-tile) var(--texture-grain-tile);
+  mix-blend-mode: multiply;
+}
+
+.image {
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 20%;
+}
+
+.placeholder {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-2xs);
+  padding: var(--spacing-xs);
+  text-align: center;
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-xs);
+  line-height: 1.35;
+}
+
+.placeholderIcon {
+  color: var(--color-primary);
+  opacity: 0.55;
+}
+
+.hint {
+  max-width: 4.4rem;
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-secondary);
+  opacity: 0.9;
+  letter-spacing: 0.02em;
+}
+
+@media print {
+  .frame {
+    width: 4.5rem;
+    height: 5.5rem;
+  }
+}

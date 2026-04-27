@@ -1,0 +1,178 @@
+/* Liseret : variables globales (variables.css). Fond = inchangé (paper + wash + forêt). */
+.root {
+  --liseret-tl: 0;
+  /* 0 = bas du header sans congé : le liseret en L n’est plus mangé par border-radius + overflow. */
+  --liseret-br: 0;
+  --liseret-w: 3px;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: var(--spacing-md);
+  /* Air intérieur : liseret / fond restent en bord, le contenu respire. */
+  padding: var(--spacing-md) var(--spacing-1);
+  /* Hauts carrés, bas carrés (liseret + clip du parent) — sans congé bas. */
+  border-radius: 0;
+  background-color: var(--color-background-paper);
+  /* Premier = dessus (forêt), comme l’ancien .root::before — libère ::before/::after pour le liseret. */
+  background-image:
+    var(--gradient-forest-canopy),
+    var(--gradient-page-wash),
+    var(--gradient-background);
+  box-shadow: var(--shadow-header);
+  /* Fond : un seul filet en bas (pas de cadre sur les 3 côtés, ce qui ternissait l’impression de fond). */
+  border: 0;
+  border-bottom: 1px solid var(--color-border-light);
+}
+
+/* TL : bandes en dégradé ; BR : idem (coupes possibles le long d’un gros congé). */
+.root::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  width: var(--liseret-arm);
+  min-width: var(--liseret-tl, 0px);
+  min-height: var(--liseret-tl, 0px);
+  height: var(--liseret-arm);
+  box-sizing: border-box;
+  border-top-left-radius: var(--liseret-tl, 0px);
+  overflow: hidden;
+  background:
+    var(--liseret-c-from-l) 0 0 / 100% var(--liseret-w) no-repeat,
+    var(--liseret-c-from-t) 0 0 / var(--liseret-w) 100% no-repeat;
+  pointer-events: none;
+}
+
+.root::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  z-index: 0;
+  top: auto;
+  left: auto;
+  width: var(--liseret-arm);
+  min-width: var(--liseret-br, 0px);
+  min-height: var(--liseret-br, 0px);
+  height: var(--liseret-arm);
+  box-sizing: border-box;
+  border-bottom-right-radius: var(--liseret-br, 0px);
+  overflow: hidden;
+  background:
+    var(--liseret-c-from-r) 100% 100% / 100% var(--liseret-w) no-repeat,
+    var(--liseret-c-from-b) 100% 100% / var(--liseret-w) 100% no-repeat;
+  pointer-events: none;
+}
+
+.inner {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: var(--spacing-md);
+  flex-wrap: wrap;
+}
+
+.content {
+  flex: 1;
+  min-width: 0;
+}
+
+.aside {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: var(--spacing-sm);
+  flex-shrink: 0;
+}
+
+@media (max-width: 599px) {
+  .inner {
+    flex-direction: column;
+  }
+
+  .aside {
+    width: 100%;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+}
+
+.title {
+  margin-bottom: var(--spacing-xs);
+  font-family: var(--font-family-heading);
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-2xl);
+  letter-spacing: var(--letter-spacing-tight);
+  line-height: var(--line-height-tight);
+}
+
+@media (min-width: var(--layout-min-width-md)) {
+  .title {
+    font-size: var(--font-size-3xl);
+  }
+}
+
+.chip {
+  margin-bottom: var(--spacing-sm);
+  padding-inline: var(--spacing-1);
+  padding-block: var(--spacing-2xs);
+  height: auto;
+  font-family: var(--font-family-heading);
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--font-size-sm);
+  border-radius: var(--radius-md);
+}
+
+@media (min-width: var(--layout-min-width-md)) {
+  .chip {
+    font-size: var(--font-size-base);
+  }
+}
+
+.tagline {
+  margin-bottom: var(--spacing-md);
+  max-width: var(--layout-max-tagline-ch);
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+  line-height: var(--line-height-relaxed);
+}
+
+@media (min-width: var(--layout-min-width-md)) {
+  .tagline {
+    font-size: var(--font-size-base);
+  }
+}
+
+.contactPaper {
+  padding: var(--spacing-1);
+  border-radius: var(--radius-md);
+}
+
+@media print {
+  .root {
+    padding: var(--spacing-xs) var(--spacing-sm);
+    margin-bottom: var(--spacing-xs);
+  }
+
+  .title {
+    margin-bottom: var(--spacing-2xs);
+    font-size: var(--font-size-base);
+  }
+
+  .chip {
+    margin-bottom: var(--spacing-2xs);
+    font-size: 0.7rem;
+  }
+
+  .tagline {
+    margin-bottom: var(--spacing-xs);
+    font-size: var(--font-size-xs);
+    line-height: 1.25;
+  }
+
+  .contactPaper {
+    padding: var(--spacing-2xs) var(--spacing-xs);
+  }
+}
