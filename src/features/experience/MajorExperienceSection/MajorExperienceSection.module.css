@@ -1,0 +1,27 @@
+/**
+ * Panneau « Zone d’Impact » : le dégradé ex-`--background-card` couvre toute la section.
+ * Les `Card` y sont sans fond (transparent) : liseret + ombre (token --shadow-card, gagne sur elevation={0} MUI).
+ */
+.impactZone {
+  margin: 0;
+  padding: var(--spacing-1);
+  border-radius: var(--radius-lg);
+  background: var(--background-card);
+  background-color: #f0e4d4;
+  /* Pastilles de timeline (axe à gauche) : proche du ton du panneau */
+  --color-timeline-dot-fill: #f0e4d4;
+}
+
+/* MUI Card : fond transparent (gagne sur la palette MUI) */
+.impactZone :global(.MuiCard-root) {
+  background: transparent !important;
+  background-color: transparent !important;
+  background-image: none;
+  box-shadow: var(--shadow-card) !important;
+}
+
+@media print {
+  .impactZone {
+    padding: var(--spacing-xs);
+  }
+}
