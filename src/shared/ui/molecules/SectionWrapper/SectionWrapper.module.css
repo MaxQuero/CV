@@ -1,0 +1,14 @@
+.root {
+  margin-bottom: var(--spacing-1);
+}
+
+.rootLarge {
+  margin-bottom: var(--spacing-xl);
+}
+
+@media print {
+  .root,
+  .rootLarge {
+    margin-bottom: var(--spacing-xs);
+  }
+}

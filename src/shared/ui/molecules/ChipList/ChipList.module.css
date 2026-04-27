@@ -1,0 +1,9 @@
+.root {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-xs);
+}
+
+.rootTight {
+  gap: var(--spacing-2xs);
+}

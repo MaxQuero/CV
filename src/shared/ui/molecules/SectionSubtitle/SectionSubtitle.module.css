@@ -1,0 +1,19 @@
+.root {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  margin-bottom: var(--spacing-sm);
+  padding: 0 0 var(--spacing-2xs);
+  border-bottom: 2px solid rgb(var(--rgb-primary) / 0.35);
+  font-family: var(--font-family-heading);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: var(--letter-spacing-normal);
+  text-transform: none;
+  color: var(--surface-sidebar-ink);
+  background: none;
+  border-radius: 0;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+}
