@@ -1,0 +1,262 @@
+/**
+ * Design tokens CV — couleurs, espacements, rayons, ombres.
+ * Constantes TS de grille : `src/theme/cvLayout.ts` (CV_GRID_SPACING).
+ */
+:root {
+  /* Typography — DM Sans titres, Inter corps (sync theme.ts) */
+  --font-family-body: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-family-heading: "DM Sans", Inter, system-ui, sans-serif;
+  --font-family-mono: "JetBrains Mono", ui-monospace, monospace;
+
+  /* Sauge désaturée, sous-bois, chêne blanchi (neutre chaud) */
+  --rgb-primary: 88 124 108;
+  --rgb-secondary: 52 72 64;
+  --rgb-tertiary: 168 158 142;
+  --rgb-ink: 38 36 34;
+
+  --color-primary: rgb(var(--rgb-primary));
+  --color-primary-light: #a8c4b4;
+  --color-primary-dark: #3d5a4a;
+  --color-primary-contrast: #f7faf8;
+
+  --color-secondary: rgb(var(--rgb-secondary));
+  --color-secondary-light: #5a7568;
+  --color-secondary-dark: #2a3830;
+  --color-secondary-contrast: #f4f2ee;
+
+  --color-tertiary: rgb(var(--rgb-tertiary));
+  --color-tertiary-light: #c9c0b2;
+  --color-tertiary-dark: #8f877a;
+  --color-tertiary-contrast: #2a2825;
+
+  /* Fond page + cartes : crème chaud / bois clair (évite le full white froid) */
+  --color-background-default: #ebe4d8;
+  --color-background-paper: #f1e9de;
+  --surface-raised: #f6efe4;
+  --surface-raised-border: rgb(var(--rgb-tertiary) / 0.35);
+  /* Panneau principal : crème légèrement bicolore (fini bois / parchemin) */
+  --background-card: linear-gradient(160deg, #faf6ed 0%, #f0e4d4 48%, #e9decc 100%);
+
+  --surface-sidebar: #e8ddcf;
+  --background-sidebar: linear-gradient(180deg, #f2e8db 0%, #e2d2bf 100%);
+  --surface-sidebar-border: #d2c2b0;
+  --surface-sidebar-ink: #4a3f36;
+  --surface-sidebar-ink-muted: #78685c;
+
+  --color-background-hover: rgb(var(--rgb-primary) / 0.08);
+  --color-background-light: rgb(var(--rgb-primary) / 0.04);
+  --color-background-gradient-start: #ebe8e2;
+  --color-background-gradient-end: #e5e1da;
+
+  --color-text-primary: #2a2825;
+  --color-text-secondary: #5e5852;
+  --color-text-disabled: rgb(var(--rgb-ink) / 0.38);
+  --color-text-white: #faf9f7;
+  --section-subtitle-fg: var(--color-primary-dark);
+
+  --color-border: rgb(var(--rgb-primary) / 0.16);
+  --color-border-light: rgb(var(--rgb-primary) / 0.1);
+  --color-border-hover: rgb(var(--rgb-primary) / 0.28);
+  --color-divider: rgb(var(--rgb-primary) / 0.12);
+
+  --gradient-primary: linear-gradient(135deg, var(--color-primary-dark) 0%, var(--color-primary) 100%);
+  --gradient-primary-hover: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-light) 100%);
+  --gradient-timeline: linear-gradient(180deg, var(--color-primary) 0%, var(--color-primary-light) 100%);
+  /* Fil de timeline : ton uni très doux (plus “app” qu’un dégradé bicolore) */
+  --gradient-timeline-line: linear-gradient(180deg, rgb(var(--rgb-primary) / 0.2) 0%, rgb(var(--rgb-primary) / 0.12) 100%);
+  --gradient-background: linear-gradient(180deg, var(--color-background-default) 0%, var(--color-background-paper) 100%);
+  /* Compat : calques légers (page / header peuvent en combiner 1–2) */
+  --gradient-page-wash: radial-gradient(100% 70% at 100% 0%, rgb(var(--rgb-primary) / 0.1) 0%, transparent 55%),
+    radial-gradient(90% 55% at 0% 100%, rgb(var(--rgb-tertiary) / 0.14) 0%, transparent 50%);
+  --gradient-radial-primary: radial-gradient(circle at 92% 8%, rgb(var(--rgb-primary) / 0.08) 0%, transparent 45%);
+  --gradient-radial-secondary: transparent;
+  --gradient-radial-tertiary: transparent;
+  --gradient-forest-canopy: radial-gradient(120% 60% at 50% 0%, rgb(var(--rgb-primary) / 0.1) 0%, transparent 50%);
+  --gradient-forest-floor: transparent;
+  --gradient-forest-side: transparent;
+
+  --texture-grain: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
+
+  --shadow-sm: 0 1px 2px rgb(var(--rgb-ink) / 0.06);
+  --shadow-md: 0 4px 12px rgb(var(--rgb-ink) / 0.06);
+  --shadow-lg: 0 12px 32px rgb(var(--rgb-ink) / 0.08);
+  --shadow-xl: 0 20px 40px rgb(var(--rgb-ink) / 0.09);
+  --shadow-primary: 0 4px 16px rgb(var(--rgb-primary) / 0.18);
+  --shadow-primary-hover: 0 8px 24px rgb(var(--rgb-primary) / 0.22);
+  --shadow-timeline-dot: 0 1px 4px rgb(var(--rgb-ink) / 0.1);
+  --glow-canopy: none;
+
+  --spacing-2xs: 0.25rem;
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-1: 1.25rem;
+  --spacing-md: 1.5rem;
+  --spacing-lg: 2rem;
+  --spacing-xl: 3rem;
+  --spacing-2xl: 4rem;
+  --spacing-3xl: 5rem;
+
+  /* Timeline : axe unique (ligne + pastille centrés). gutter = marge contenu ; axis = centre du fil */
+  --spacing-timeline-gutter: 1.5rem;
+  --spacing-timeline-axis: 0.75rem;
+  --spacing-timeline-dot-left: calc(
+    var(--spacing-timeline-axis) - var(--spacing-timeline-gutter) - 0.5 * var(--spacing-timeline-dot-size)
+  );
+  --spacing-timeline-dot-top: 6px;
+  --spacing-timeline-line-left: 0.75rem;
+  --spacing-timeline-line-width: 1px;
+  --spacing-timeline-dot-size: 10px;
+  --spacing-timeline-dot-border: 2.5px;
+  /* rétrocompat, équiv. gutter */
+  --spacing-timeline-left: var(--spacing-timeline-gutter);
+
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 20px;
+  --radius-2xl: 24px;
+  --radius-pill: 9999px;
+  --radius-full: 50%;
+
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 0.875rem;
+  --font-size-base: 1rem;
+  --font-size-lg: 1.25rem;
+  --font-size-xl: 1.5rem;
+  --font-size-2xl: 2rem;
+  --font-size-3xl: 3rem;
+
+  --line-height-tight: 1.2;
+  --line-height-normal: 1.5;
+  --line-height-relaxed: 1.55;
+  --line-height-loose: 1.65;
+
+  --letter-spacing-tight: -0.03em;
+  --letter-spacing-normal: -0.01em;
+  --letter-spacing-wide: 0.02em;
+
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-weight-extrabold: 800;
+
+  --ease-out-smooth: cubic-bezier(0.22, 1, 0.36, 1);
+  --transition-fast: 0.22s var(--ease-out-smooth);
+  --transition-normal: 0.38s var(--ease-out-smooth);
+
+  --z-index-base: 1;
+  --z-index-sticky: 10;
+
+  --color-chip-bg: rgb(var(--rgb-primary) / 0.1);
+  --color-chip-border: rgb(var(--rgb-primary) / 0.18);
+  --color-chip-border-hover: rgb(var(--rgb-primary) / 0.32);
+  --color-chip-bg-hover: rgb(var(--rgb-primary) / 0.14);
+  --chip-padding-inline: 0.5rem;
+  --chip-padding-block: 0.25rem;
+  --chip-label-padding: 0 2px;
+  --button-padding-inline: 24px;
+  --button-padding-block: 10px;
+  /* « Carte » moderne : ombre douce + filet ghost (pas gros bordure pleine) */
+  --color-card-border: transparent;
+  --color-card-border-hover: transparent;
+  --color-card-outline: rgb(var(--rgb-tertiary) / 0.32);
+  --shadow-card:
+    0 0 0 0.5px var(--color-card-outline),
+    0 1px 2px rgb(var(--rgb-ink) / 0.04),
+    0 8px 24px -6px rgb(var(--rgb-ink) / 0.08);
+  --shadow-card-hover:
+    0 0 0 0.5px rgb(var(--rgb-tertiary) / 0.4),
+    0 4px 20px -4px rgb(var(--rgb-ink) / 0.1);
+
+  --shadow-header: 0 1px 0 rgb(var(--rgb-ink) / 0.06), 0 12px 40px -24px rgb(var(--rgb-ink) / 0.12);
+  --shadow-button-emboss: none;
+  --layout-max-tagline-ch: 58ch;
+  --layout-section-title-gap: 0.5rem;
+  --size-section-accent-bar: 3px;
+  --size-separator-dot: 4px;
+  --border-accent-thick: 1px;
+  --border-accent-medium: 2px;
+  --texture-grain-tile: 180px;
+  --layout-min-width-md: 56.25rem;
+
+  /* Liseret (DA) : bords adoucis vers l’intérieur — utilisés en bandes (coins TL/BR) */
+  --liseret-w: 3px;
+  --liseret-arm: min(38%, 6.5rem);
+  --liseret-c-from-l: linear-gradient(
+    90deg,
+    var(--color-primary) 0%,
+    rgb(var(--rgb-primary) / 0.3) 45%,
+    transparent 100%
+  );
+  --liseret-c-from-r: linear-gradient(
+    270deg,
+    var(--color-primary) 0%,
+    rgb(var(--rgb-primary) / 0.3) 45%,
+    transparent 100%
+  );
+  --liseret-c-from-t: linear-gradient(
+    180deg,
+    var(--color-primary) 0%,
+    rgb(var(--rgb-primary) / 0.3) 45%,
+    transparent 100%
+  );
+  --liseret-c-from-b: linear-gradient(
+    0deg,
+    var(--color-primary) 0%,
+    rgb(var(--rgb-primary) / 0.3) 45%,
+    transparent 100%
+  );
+}
+
+.font-semibold {
+  font-weight: var(--font-weight-semibold);
+}
+
+.line-height-loose {
+  line-height: var(--line-height-loose);
+}
+
+/**
+ * Impression A4 (Ctrl+P) : on conserve les couleurs CSS (fonds, dégradés)
+ * sinon les navigateurs strippent les backgrounds par défaut. L’utilisateur
+ * doit aussi laisser cochée l’option "Graphismes en arrière-plan" du dialogue.
+ */
+@page {
+  size: A4 portrait;
+  margin: 6mm;
+}
+
+@media print {
+  html {
+    font-size: 12px;
+  }
+
+  html,
+  body {
+    background: var(--color-background-default);
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+    min-height: 0;
+  }
+
+  *,
+  *::before,
+  *::after {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  :root {
+    --spacing-2xs: 0.12rem;
+    --spacing-xs: 0.3rem;
+    --spacing-sm: 0.35rem;
+    --spacing-1: 0.4rem;
+    --spacing-md: 0.5rem;
+    --spacing-lg: 0.7rem;
+    --spacing-xl: 0.85rem;
+    --line-height-loose: 1.25;
+    --line-height-relaxed: 1.22;
+    --line-height-normal: 1.22;
+  }
+}
