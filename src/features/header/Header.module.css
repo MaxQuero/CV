@@ -7,7 +7,7 @@
   column-gap: var(--gutter);
   row-gap: 3mm;
   padding: var(--header-pad-y) var(--margin) 7mm;
-  background: linear-gradient(135deg, var(--navy-deep) 0%, var(--navy) 100%);
+  background: linear-gradient(135deg, var(--navy-deep) 0%, #4f7a63 100%);
   color: var(--on-dark);
 }
 
@@ -24,7 +24,7 @@
 }
 
 .lastName {
-  color: #a9c9b3;
+  color: #dff0e3;
 }
 
 .title {
@@ -55,5 +55,5 @@
   font-size: var(--fs-body);
   color: var(--on-dark-muted);
   padding-top: 2.5mm;
-  border-top: 1px solid rgb(255 255 255 / 0.18);
+  border-top: 1px solid rgb(255 255 255 / 0.3);
 }
