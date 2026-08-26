@@ -3,10 +3,12 @@ import styles from './SpacingBox.module.css';
 
 interface SpacingBoxProps extends BoxProps {
   children: React.ReactNode;
-  spacing?: 'sm' | 'md' | 'lg';
+  spacing?: 'xxs' | 'xs' | 'sm' | 'md' | 'lg';
 }
 
 const spacingClassMap = {
+  xxs: styles.xxs,
+  xs: styles.xs,
   sm: styles.sm,
   md: styles.md,
   lg: styles.lg,

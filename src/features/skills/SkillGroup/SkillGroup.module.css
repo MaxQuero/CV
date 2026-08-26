@@ -1,42 +1,24 @@
 .root {
-  margin-bottom: var(--spacing-md);
+  margin-bottom: var(--spacing-xs);
 }
 
 .rootCompact {
-  margin-bottom: var(--spacing-1);
+  margin-bottom: var(--spacing-xs);
+}
+
+.rootCompact .chips {
+  gap: var(--spacing-2xs);
 }
 
 .category {
-  margin-bottom: var(--spacing-xs);
+  margin-bottom: var(--spacing-2xs) !important;
   font-weight: var(--font-weight-semibold);
-  font-size: var(--font-size-base);
+  font-size: var(--font-size-sm) !important;
 }
 
-.categoryCompact {
-  font-size: var(--font-size-xs);
-}
 
 .chips {
   display: flex;
   flex-wrap: wrap;
   gap: var(--spacing-xs);
-}
-
-@media print {
-  .rootCompact {
-    margin-bottom: var(--spacing-xs);
-  }
-
-  .chips {
-    gap: var(--spacing-2xs);
-  }
-
-  .chips :global(.MuiChip-root) {
-    font-size: 0.65rem;
-    padding: 0.1rem 0.3rem;
-  }
-
-  .chips :global(.MuiChip-label) {
-    padding: 0 0.15rem;
-  }
 }

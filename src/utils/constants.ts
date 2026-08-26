@@ -1,6 +1,6 @@
 export const SECTION_TITLES = {
-  MAJOR_EXPERIENCES: 'Zone d\'Impact',
-  FOUNDATION_EXPERIENCES: 'Fondations & Parcours',
+  MAJOR_EXPERIENCES: 'Expériences Professionnelles',
+  FOUNDATION_EXPERIENCES: 'Expériences Précédentes',
   EDUCATION: 'Formation',
   SKILLS: 'Compétences',
   LANGUAGES: 'Langues',

@@ -1,4 +1,4 @@
-import { Divider, Paper, Typography } from '@mui/material';
+import { Paper, Typography } from '@mui/material';
 import { SkillGroup } from '../../skills/SkillGroup/SkillGroup';
 import { SectionSubtitle } from '../../../shared/ui/molecules/SectionSubtitle/SectionSubtitle';
 import { HoverablePaper } from '../../../shared/ui/molecules/HoverablePaper/HoverablePaper';
@@ -20,40 +20,42 @@ export const Sidebar = ({ skills, education, languages, foundationExperiences }:
     <Paper
       elevation={0}
       className={styles.root}
-      sx={{ background: 'var(--background-sidebar)' }}
+      sx={{ background: 'var(--background-card)' }}
     >
-      <SectionSubtitle>Compétences</SectionSubtitle>
-      {skills.map((skillGroup, index) => (
-        <SkillGroup key={index} category={skillGroup.category} items={skillGroup.items} compact />
-      ))}
+      <div className={styles.sidebarSection} aria-labelledby="sidebar-skills-heading">
+        <SectionSubtitle id="sidebar-skills-heading">{SECTION_TITLES.SKILLS}</SectionSubtitle>
+        {skills.map((skillGroup, index) => (
+          <SkillGroup key={index} category={skillGroup.category} items={skillGroup.items} compact />
+        ))}
+      </div>
 
-      <Divider className={styles.divider} sx={{ borderColor: 'var(--surface-sidebar-border)' }} />
+      <div className={styles.sidebarSection} aria-labelledby="sidebar-education-heading">
+        <SectionSubtitle id="sidebar-education-heading">{SECTION_TITLES.EDUCATION}</SectionSubtitle>
+        {education.map((edu, index) => (
+          <EducationItem key={index} education={edu} />
+        ))}
+      </div>
 
-      <SectionSubtitle>{SECTION_TITLES.EDUCATION}</SectionSubtitle>
-      {education.map((edu, index) => (
-        <EducationItem key={index} education={edu} />
-      ))}
+      <div className={styles.sidebarSection} aria-labelledby="sidebar-languages-heading">
+        <SectionSubtitle id="sidebar-languages-heading">{SECTION_TITLES.LANGUAGES}</SectionSubtitle>
+        {languages.map((lang, index) => (
+          <HoverablePaper key={index} className={styles.langCard}>
+            <Typography variant="body2" className={`font-semibold ${styles.langLabel}`}>
+              {lang.name}
+            </Typography>
+            <Typography variant="body2" color="text.secondary" className={styles.langLevel}>
+              {lang.level}
+            </Typography>
+          </HoverablePaper>
+        ))}
+      </div>
 
-      <Divider className={styles.divider} sx={{ borderColor: 'var(--surface-sidebar-border)' }} />
-
-      <SectionSubtitle>{SECTION_TITLES.LANGUAGES}</SectionSubtitle>
-      {languages.map((lang, index) => (
-        <HoverablePaper key={index} className={styles.langCard}>
-          <Typography variant="body2" className={`font-semibold ${styles.langLabel}`}>
-            {lang.name}
-          </Typography>
-          <Typography variant="body2" color="text.secondary" className={styles.langLevel}>
-            {lang.level}
-          </Typography>
-        </HoverablePaper>
-      ))}
-
-      <Divider className={styles.divider} sx={{ borderColor: 'var(--surface-sidebar-border)' }} />
-
-      <SectionSubtitle>{SECTION_TITLES.FOUNDATION_EXPERIENCES}</SectionSubtitle>
-      {foundationExperiences.map((experience, index) => (
-        <ExperienceItem key={index} experience={experience} isMajor={false} />
-      ))}
+      <div className={styles.sidebarSection} aria-labelledby="sidebar-foundation-heading">
+        <SectionSubtitle id="sidebar-foundation-heading">{SECTION_TITLES.FOUNDATION_EXPERIENCES}</SectionSubtitle>
+        {foundationExperiences.map((experience, index) => (
+          <ExperienceItem key={index} experience={experience} isMajor={false} />
+        ))}
+      </div>
     </Paper>
   );
 };

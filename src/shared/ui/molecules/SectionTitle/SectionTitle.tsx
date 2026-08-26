@@ -8,7 +8,8 @@ interface SectionTitleProps {
 export const SectionTitle = ({ children }: SectionTitleProps) => {
   return (
     <Typography
-      variant="h4"
+      component="h2"
+      variant="h3"
       className={styles.root}
       sx={{ color: 'var(--color-text-primary)', margin: 0 }}
     >

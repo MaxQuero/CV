@@ -40,20 +40,19 @@ function getPaletteFromCss(): PaletteOptions {
       secondary: getCssVar('--color-text-secondary'),
       disabled: getCssVar('--color-text-disabled'),
     },
-    divider: getCssVar('--color-divider'),
   };
 }
 
 const typography = {
   fontFamily: ['Inter', '-apple-system', 'BlinkMacSystemFont', '"Segoe UI"', 'Roboto', 'sans-serif'].join(','),
-  h1: { fontFamily: '"JetBrains Mono", monospace', fontWeight: 700, letterSpacing: '-0.02em' },
-  h2: { fontFamily: '"JetBrains Mono", monospace', fontWeight: 700, letterSpacing: '-0.02em' },
-  h3: { fontFamily: '"JetBrains Mono", monospace', fontWeight: 600, letterSpacing: '-0.01em' },
+  h1: { fontFamily: '"JetBrains Mono", monospace', fontWeight: 700, letterSpacing: '-0.02em', fontSize: '2.5rem' },
+  h2: { fontFamily: '"JetBrains Mono", monospace', fontWeight: 700, letterSpacing: '-0.02em', fontSize: '2rem' },
+  h3: { fontFamily: '"JetBrains Mono", monospace', fontWeight: 600, letterSpacing: '-0.01em', fontSize: '1.5rem' },
   h4: { fontFamily: '"JetBrains Mono", monospace', fontWeight: 600, letterSpacing: '-0.01em', fontSize: '1.25rem' },
-  h5: { fontFamily: '"JetBrains Mono", monospace', fontWeight: 600 },
+  h5: { fontFamily: '"JetBrains Mono", monospace', fontWeight: 600, fontSize: '1.1rem' },
   h6: { fontFamily: '"JetBrains Mono", monospace', fontWeight: 600, fontSize: '1rem' },
-  body1: { fontFamily: 'Inter, sans-serif', lineHeight: 1.65 },
-  body2: { fontFamily: 'Inter, sans-serif', lineHeight: 1.55 },
+  body1: { fontFamily: 'Inter, sans-serif', lineHeight: 1.65, fontSize: '0.9rem' },
+  body2: { fontFamily: 'Inter, sans-serif', lineHeight: 1.42, fontSize: '0.89rem' },
 };
 
 export function createCvTheme() {

@@ -1,4 +1,4 @@
-import { Typography, Card, CardContent, Stack, Divider } from '@mui/material';
+import { Typography, Card, CardContent, Stack } from '@mui/material';
 import { MajorExperience, FoundationExperience } from '../../../core/types/cv.types';
 import { DateRange } from '../../../shared/ui/molecules/DateRange/DateRange';
 import { STARSection } from '../STARSection/STARSection';
@@ -18,7 +18,7 @@ export const ExperienceItem = ({ experience, isMajor }: ExperienceItemProps) => 
     return (
       <Card elevation={0} className={['card-liseret', styles.card].join(' ')}>
         <CardContent className={styles.cardContent}>
-          <SpacingBox spacing="md">
+          <SpacingBox spacing="xs">
             <Typography variant="h5" className={styles.position}>
               {experience.position}
             </Typography>
@@ -38,7 +38,6 @@ export const ExperienceItem = ({ experience, isMajor }: ExperienceItemProps) => 
           />
           {experience.technologies && experience.technologies.length > 0 && (
             <>
-              <Divider className={styles.divider} />
               <ChipList className={styles.chipList} items={experience.technologies} />
             </>
           )}

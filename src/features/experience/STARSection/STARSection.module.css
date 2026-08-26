@@ -1,4 +1,7 @@
 .root {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
   margin-top: 0.25rem;
   padding-top: 0.15rem;
 }
@@ -6,7 +9,7 @@
 /* Actions : filets verticaux (sprints / issues) — plus de “bullet” rétro */
 .actionList {
   list-style: none;
-  margin: 0.4rem 0 0;
+  margin: 0;
   padding: 0;
   display: flex;
   flex-direction: column;
@@ -33,20 +36,4 @@
   align-self: stretch;
   background: linear-gradient(180deg, var(--color-primary) 0%, var(--color-primary-light) 100%);
   opacity: 0.9;
-}
-
-@media print {
-  .root {
-    margin-top: 0;
-    padding-top: 0;
-  }
-
-  .actionList {
-    margin: 0.1rem 0 0;
-    gap: 0.15rem;
-  }
-
-  .actionItem::before {
-    min-height: 1em;
-  }
 }

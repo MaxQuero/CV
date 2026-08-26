@@ -1,15 +1,23 @@
 /**
- * Panneau « Zone d’Impact » : le dégradé ex-`--background-card` couvre toute la section.
+ * Panneau expériences professionnelles : le dégradé ex-`--background-card` couvre toute la section.
  * Les `Card` y sont sans fond (transparent) : liseret + ombre (token --shadow-card, gagne sur elevation={0} MUI).
  */
 .impactZone {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
   margin: 0;
-  padding: var(--spacing-1);
-  border-radius: var(--radius-lg);
+  padding: var(--spacing-sm);
+  border-radius: var(--radius-xs);
   background: var(--background-card);
   background-color: #f0e4d4;
-  /* Pastilles de timeline (axe à gauche) : proche du ton du panneau */
-  --color-timeline-dot-fill: #f0e4d4;
+}
+
+.experienceList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
 }
 
 /* MUI Card : fond transparent (gagne sur la palette MUI) */
@@ -18,10 +26,4 @@
   background-color: transparent !important;
   background-image: none;
   box-shadow: var(--shadow-card) !important;
-}
-
-@media print {
-  .impactZone {
-    padding: var(--spacing-xs);
-  }
 }

@@ -1,3 +1,7 @@
+/**
+ * Page : fond décoratif autour d’une zone document `.cvSheet` (zone imprimable A4
+ * à 10 mm de marge : 190 mm × 277 mm).
+ */
 .root {
   position: relative;
   isolation: isolate;
@@ -24,29 +28,38 @@
   z-index: 1;
 }
 
-/**
- * Colonne max large MUI (lg) ; marges ici.
- */
 .mainCapture {
-  --page-inline: clamp(1rem, 4.5vw, 1.75rem);
-  max-width: 100%;
   box-sizing: border-box;
-  padding-inline: var(--page-inline);
-  padding-top: var(--spacing-md);
-  padding-bottom: var(--spacing-xl);
+  padding: var(--spacing-sm) var(--page-bleed-inline);
+  padding-bottom: var(--spacing-md);
+  /* Feuille A4 plus étroite que la fenêtre : défilement horizontal si besoin */
+  overflow-x: auto;
+}
+
+/**
+ * Document unique : même boîte à l’écran (largeur zone type A4 sans marge navigateur)
+ * et flux naturel à l’impression.
+ * --cv-sheet-w / --cv-sheet-min-h ≈ 210−20 mm × 297−20 mm (marges ~10 mm).
+ */
+.cvSheet {
+  width: var(--cv-sheet-w);
+  max-width: 100%;
+  min-height: var(--cv-sheet-min-h);
+  margin-inline: auto;
+  box-sizing: border-box;
+  line-height: var(--line-height-normal);
 }
 
 .grid {
-  align-items: flex-start;
+  align-items: stretch;
 }
 
-/**
- * Impression A4 (Ctrl+P) : on laisse @page gérer les marges et on neutralise
- * les contraintes plein-écran qui n’ont pas de sens en print. La viewport
- * d’impression (~720 px) est en-dessous du breakpoint MUI `md` (900 px) :
- * sans override, la grille tombe sur la variante mobile et empile les colonnes.
- * On rétablit donc à la main la disposition 4/8 (sidebar / main).
- */
+/* Colonnes de même hauteur : le contenu remplit la cellule (sidebar + expériences). */
+.grid > :global(.MuiGrid-item) {
+  display: flex;
+  flex-direction: column;
+}
+
 @media print {
   .root {
     min-height: 0;
@@ -57,27 +70,19 @@
   }
 
   .mainCapture {
-    padding-top: 0;
+    padding: 0;
     padding-bottom: 0;
   }
 
-  .grid {
-    flex-wrap: nowrap !important;
+  .cvSheet {
+    width: 100%;
+    min-height: 0;
+    max-width: none;
   }
 
-  .grid > :global(.MuiGrid-item):first-child {
-    flex-basis: 33.3333% !important;
-    flex-grow: 0 !important;
-    max-width: 33.3333% !important;
-  }
-
-  .grid > :global(.MuiGrid-item):nth-child(2) {
-    flex-basis: 66.6667% !important;
-    flex-grow: 0 !important;
-    max-width: 66.6667% !important;
-  }
-
-  .grid :global(.MuiPaper-root) {
+  /* Ne pas forcer `static` sur les cartes à liseret : sinon les ::before/::after
+     se positionnent par rapport au conteneur parent au lieu de la Card. */
+  .grid :global(.MuiPaper-root:not(.card-liseret)) {
     position: static !important;
   }
 }

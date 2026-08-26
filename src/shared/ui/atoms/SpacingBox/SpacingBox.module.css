@@ -1,3 +1,10 @@
+.xxs {
+  margin-bottom: var(--spacing-xxs);
+}
+
+.xs {
+  margin-bottom: var(--spacing-xs);
+}
 .sm {
   margin-bottom: var(--spacing-sm);
 }

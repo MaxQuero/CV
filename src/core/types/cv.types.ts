@@ -40,8 +40,6 @@ export interface CVData {
     email: string;
     phone?: string;
     location?: string;
-    /** URL (ex. `/photo.jpg` dans `public/`) — affichage web + export PDF */
-    photoUrl?: string;
     linkedIn?: string;
     github?: string;
     website?: string;

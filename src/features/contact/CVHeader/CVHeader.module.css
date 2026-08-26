@@ -1,29 +1,23 @@
 /* Liseret : variables globales (variables.css). Fond = inchangé (paper + wash + forêt). */
 .root {
   --liseret-tl: 0;
-  /* 0 = bas du header sans congé : le liseret en L n’est plus mangé par border-radius + overflow. */
   --liseret-br: 0;
   --liseret-w: 3px;
   position: relative;
   overflow: hidden;
-  margin-bottom: var(--spacing-md);
-  /* Air intérieur : liseret / fond restent en bord, le contenu respire. */
-  padding: var(--spacing-md) var(--spacing-1);
-  /* Hauts carrés, bas carrés (liseret + clip du parent) — sans congé bas. */
+  margin-bottom: var(--spacing-xs);
+  padding: var(--spacing-xs) var(--spacing-sm);
   border-radius: 0;
   background-color: var(--color-background-paper);
-  /* Premier = dessus (forêt), comme l’ancien .root::before — libère ::before/::after pour le liseret. */
   background-image:
     var(--gradient-forest-canopy),
     var(--gradient-page-wash),
     var(--gradient-background);
   box-shadow: var(--shadow-header);
-  /* Fond : un seul filet en bas (pas de cadre sur les 3 côtés, ce qui ternissait l’impression de fond). */
   border: 0;
   border-bottom: 1px solid var(--color-border-light);
 }
 
-/* TL : bandes en dégradé ; BR : idem (coupes possibles le long d’un gros congé). */
 .root::before {
   content: "";
   position: absolute;
@@ -67,112 +61,40 @@
 .inner {
   position: relative;
   z-index: 2;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: var(--spacing-md);
-  flex-wrap: wrap;
 }
 
 .content {
-  flex: 1;
   min-width: 0;
 }
 
-.aside {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  gap: var(--spacing-sm);
-  flex-shrink: 0;
-}
-
-@media (max-width: 599px) {
-  .inner {
-    flex-direction: column;
-  }
-
-  .aside {
-    width: 100%;
-    justify-content: space-between;
-    align-items: flex-start;
-  }
-}
-
 .title {
-  margin-bottom: var(--spacing-xs);
+  margin-bottom: var(--spacing-xs) !important;
   font-family: var(--font-family-heading);
   font-weight: var(--font-weight-bold);
-  font-size: var(--font-size-2xl);
+  font-size: 1.05rem;
   letter-spacing: var(--letter-spacing-tight);
   line-height: var(--line-height-tight);
 }
 
-@media (min-width: var(--layout-min-width-md)) {
-  .title {
-    font-size: var(--font-size-3xl);
-  }
-}
-
 .chip {
-  margin-bottom: var(--spacing-sm);
-  padding-inline: var(--spacing-1);
-  padding-block: var(--spacing-2xs);
+  margin-bottom: var(--spacing-xs) !important;
+  padding: var(--chip-padding-block) var(--chip-padding-inline) !important;
   height: auto;
   font-family: var(--font-family-heading);
   font-weight: var(--font-weight-semibold);
-  font-size: var(--font-size-sm);
+  font-size: var(--font-size-sm) !important;
   border-radius: var(--radius-md);
-}
-
-@media (min-width: var(--layout-min-width-md)) {
-  .chip {
-    font-size: var(--font-size-base);
-  }
 }
 
 .tagline {
-  margin-bottom: var(--spacing-md);
+  margin-bottom: var(--spacing-xs) !important;
   max-width: var(--layout-max-tagline-ch);
-  font-size: var(--font-size-sm);
+  font-size: var(--font-size-sm) !important;
   color: var(--color-text-secondary);
-  line-height: var(--line-height-relaxed);
-}
-
-@media (min-width: var(--layout-min-width-md)) {
-  .tagline {
-    font-size: var(--font-size-base);
-  }
+  line-height: var(--line-height-normal);
 }
 
 .contactPaper {
-  padding: var(--spacing-1);
+  padding: var(--spacing-xs);
   border-radius: var(--radius-md);
-}
-
-@media print {
-  .root {
-    padding: var(--spacing-xs) var(--spacing-sm);
-    margin-bottom: var(--spacing-xs);
-  }
-
-  .title {
-    margin-bottom: var(--spacing-2xs);
-    font-size: var(--font-size-base);
-  }
-
-  .chip {
-    margin-bottom: var(--spacing-2xs);
-    font-size: 0.7rem;
-  }
-
-  .tagline {
-    margin-bottom: var(--spacing-xs);
-    font-size: var(--font-size-xs);
-    line-height: 1.25;
-  }
-
-  .contactPaper {
-    padding: var(--spacing-2xs) var(--spacing-xs);
-  }
 }

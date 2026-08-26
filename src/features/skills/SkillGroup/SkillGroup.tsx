@@ -7,12 +7,12 @@ interface SkillGroupProps {
   compact?: boolean;
 }
 
-export const SkillGroup = ({ category, items, compact = false }: SkillGroupProps) => {
-  const rootClass = compact ? [styles.root, styles.rootCompact].join(' ') : styles.root;
-  const categoryClass = compact ? [styles.category, styles.categoryCompact].join(' ') : styles.category;
+export const SkillGroup = ({ category, items }: SkillGroupProps) => {
+
+  
   return (
-    <Box className={rootClass}>
-      <Typography variant={compact ? 'body2' : 'h6'} className={categoryClass}>
+    <Box className={styles.root}>
+      <Typography variant='h6' className={styles.category}>
         {category}
       </Typography>
       <Box className={styles.chips}>

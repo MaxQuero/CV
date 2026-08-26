@@ -4,11 +4,9 @@ export const cvData: CVData = {
   personalInfo: {
     firstName: 'Maxime',
     lastName: 'QUERO',
-    title: 'Senior Fullstack Engineer | Référent Technique',
+    title: 'Senior Fullstack Engineer | Référent Technique | AI-Augmented Engineering',
     tagline:
-      'Référent technique fullstack TypeScript/Node.js, 11 ans d’expérience. Spécialiste des architectures modernes (Clean, Hexagonal, DDD) et de la qualité logicielle.',
-    /** Ex. : '/ma-photo.jpg' (fichier dans `public/`) — laisser absent pour le cadre placeholder */
-    // photoUrl: '/ma-photo.jpg',
+      '11 ans d’expérience. Architecture (Clean, Hexagonal, DDD), qualité logicielle et delivery industrialisé par agents IA.',
     email: 'maxime.quero@gmail.com',
     phone: '06 41 75 77 61',
     location: 'Nantes (44)',
@@ -18,126 +16,136 @@ export const cvData: CVData = {
   majorExperiences: [
     {
       type: 'major',
-      company: 'HiPay',
+      company: 'Conserto (HiPay)',
       position: 'Senior Fullstack Engineer & Référent Tech',
-      startDate: 'Janvier 2024',
-      endDate: 'Présent',
+      startDate: 'Jan 2024',
+      endDate: 'Aujourd\'hui',
       star: {
         situation:
-          'Connecteur Shopify (Mix Payment) et SDK marchands, socle legacy en contexte PCI-DSS.',
-        task: 'Piloter la migration v2 du SDK et l’infrastructure Shopify sur GCP.',
+          'Référent technique & innovation en contexte PCI-DSS, en charge de la modernisation du delivery.',
+        task: '',
         action: [
-          'Google Pay dans le SDK v2 (architecture en couches), socle pour les futurs wallets (Apple Pay).',
-          'Industrialisation du SDK v2 (ADR, Mermaid, AGENTS.md) et POC SDK Tester (DDD, Clean Architecture).',
-          'Infrastructure Shopify Master/Children Terraform + GCP Pub/Sub avec service de chiffrement.',
+          'Architecture : discovery et conception d\'une V2 modulaire d\'intégration de moyens de paiement (Google Pay...).',
+          'AI-augmented engineering : socle de context engineering (CLAUDE.md, ADRs, skills, MCP Jira) pour implémenter un ticket de bout en bout par agent, sous revue humaine.',
+          'Expertise : refonte du connecteur Node Shopify (Terraform/GCP) et logique de multi-paiement complexe.'
         ],
         result:
-          'Mix Payment livré en PCI-DSS ; SDK v2 prêt pour les futurs moyens de paiement.',
+          'Socle V2 évolutif ; Shopify et Mix Payment en production ; POC d\'ajout automatisé de moyens de paiement par IA, industrialisation fin 2026.',
       },
-      technologies: ['TypeScript', 'Node.js', 'Google Pay', 'GCP', 'Shopify', 'PCI-DSS'],
+      technologies: ['Node / React', 'TypeScript', 'GCP', 'Terraform', 'Claude Code / MCP', 'Archi Clean / Hexagonale', 'DDD'],
     },
     {
       type: 'major',
-      company: 'SNCF Connect',
-      position: 'Développeur Fullstack & Cloud',
-      startDate: 'Janvier 2023',
-      endDate: 'Janvier 2024',
+      company: 'Conserto (SNCF Connect & Vecteur Plus)',
+      position: 'Senior Fullstack Engineer & Cloud',
+      startDate: 'Jan 2023',
+      endDate: 'Déc 2023',
       star: {
         situation:
-          'Plateformes d’abonnement MAX, environnement à fort trafic et haute disponibilité.',
-        task: 'Fiabiliser les déploiements et accélérer la productivité de l’équipe.',
+          'Moderniser les infrastructures Cloud et fiabiliser les processus de déploiement sur des missions courtes à fort enjeu technique.',
+        task: '',
         action: [
-          'Migration infra vers AWS CDK et fiabilisation de la pyramide de tests (Playwright, Vitest).',
-          'Développement des fonctionnalités d’abonnement MAX (TypeScript, React, Node.js).',
-        ],
-        result:
-          'Builds accélérés, tests stabilisés et expérience utilisateur améliorée en production.',
+          'SNCF Connect : Modernisation des infrastructures Cloud et evolutions de la stack et de la pyramide de tests (Playwright/Vitest).',
+          'Vecteur Plus : Conception et réalisation d’un bloc d’authentification centralisé et déploiement via AWS (SDK & CDK).',        ],
+        result: 'Modernsisation des releases et développements d\'évolutions.'
       },
       technologies: ['TypeScript', 'Node.js', 'React', 'AWS CDK', 'Playwright', 'Vite'],
     },
     {
       type: 'major',
-      company: 'My Money Bank',
-      position: 'Développeur Fullstack Senior',
-      startDate: 'Octobre 2021',
-      endDate: 'Décembre 2022',
+      company: 'Conserto (My Money Bank)',
+      position: 'Fullstack Engineer',
+      startDate: 'Oct 2021',
+      endDate: 'Déc 2022',
       star: {
-        situation: 'Application eSofi de crédits bancaires durant une fusion bancaire.',
-        task: 'Garantir la stabilité de la plateforme et l’UX, front et back.',
+        situation: ' Faire évoluer et garantir l\'UX et la stabilitéde la plateforme métier eSofi (regroupement de crédits) dans un contexte critique bancaire.',
+        task: '',
         action: [
-          'Évolutions front et back de l’application de crédits eSofi.',
-          'Stack GraphQL/Apollo déployée sur Kubernetes.',
+          'Conception fullstack (React/Node) et intégration d\'évolutions pour challenger le besoin métier (regroupement de crédits).',
+          'Run & Monitoring : Déploiement de la stack sur Kubernetes et support métier direct de niveau 2.'
         ],
-        result:
-          'Plateforme stabilisée à 100 % de disponibilité, support métier niveau 2 assuré.',
+        result: 'Continuité de service assurée avec succès durant la transition d\'acquisition, et accélération de la résolution des incidents.'
       },
-      technologies: ['React', 'GraphQL', 'Apollo', 'Kubernetes', 'Node.js'],
+      technologies: ['Node.js / React', 'GraphQL / Apollo', 'RabbitMQ', 'Kubernetes', 'Grafana'],
     },
   ],
   foundationExperiences: [
     {
       type: 'foundation',
+      period: '2020 - 2021',
+      company: 'Conserto (EP)',
+      position: 'Frontend engineer',
+      description:
+        '',
+      technologies: ['Angular', 'TypeScript', 'Docker'],
+    },
+    {
+      type: 'foundation',
       period: '2019 - 2020',
       company: 'Fifty Truck',
-      position: 'Fullstack JS/PHP',
+      position: 'Fullstack engineer JS/PHP',
       description:
-        'Application desktop Angular/Laravel et application mobile déployée sur les stores via Capacitor.',
-      technologies: ['Ionic 4', 'Angular 8', 'Laravel 6', 'Capacitor', 'IOS', 'Android'],
+        '',
+      technologies: ['Laravel', 'Angular', 'Ionic'],
     },
     {
       type: 'foundation',
       period: '2017 - 2019',
       company: 'Digital Garden & Start-up Palace',
       position: 'Fullstack PHP/JS',
-      description: 'Développement de projets clients en Symfony, Drupal 8 et Vue.js.',
-      technologies: ['Symfony', 'Drupal 8', 'Wordpress', 'VueJS', 'PHP', 'Angular'],
+      description: '',
+      technologies: ['Symfony', 'Drupal 8', 'Angular'],
     },
     {
       type: 'foundation',
       period: '2014 - 2016',
       company: 'CGI (Alternance)',
-      position: 'Développeur E-commerce',
+      position: 'Fullstack e-commerce engineer',
       description:
-        'Sites e-commerce Magento, Symfony 2 et Zend pour des clients du secteur luxe (LVMH, etc.).',
-      technologies: ['Magento', 'Symfony 2', 'Zend Framework'],
+        '',
+      technologies: ['Magento', 'Symfony 2', 'Zend'],
     },
   ],
   education: [
     {
       year: '2016',
       level: 'BAC +5',
-      degree: 'Expert en informatique et système d\'informations',
+      degree: 'Expert en informatique et S.I.',
       school: 'EPSI Lille (59)',
     },
     {
       year: '2013',
       level: 'BAC +2',
-      degree: 'DUT Informatique spécialité Imagerie Numérique',
+      degree: 'DUT Informatique',
       school: 'IUT LANNION (22)',
     },
   ],
   skills: [
     {
       category: 'Frontend',
-      items: ['React', 'TypeScript', 'Vite', 'Angular', 'Vue.js'],
+      items: ['React', 'TypeScript', 'Vite'],
     },
     {
       category: 'Backend',
-      items: ['Node.js', 'GraphQL', 'PHP', 'Symfony', 'Laravel'],
+      items: ['Node.js', 'GraphQL', 'Symfony'],
     },
     {
       category: 'Cloud & Infrastructure',
-      items: ['GCP', 'AWS CDK', 'Terraform', 'Kubernetes', 'Docker'],
+      items: ['GCP', 'AWS', 'Terraform', 'K8s'],
     },
     {
       category: 'Architecture & Méthodologies',
-      items: ['DDD', 'Clean Architecture', 'Hexagonal Architecture', 'SOLID', 'PCI-DSS'],
+      items: ['DDD', 'Clean Arch.', 'SOLID', 'PCI-DSS'],
+    },
+    {
+      category: 'IA & Delivery',
+      items: ['Claude Code', 'MCP', 'Agents', 'Context engineering'],
     },
   ],
   languages: [
     {
       name: 'Anglais',
-      level: 'TOEIC 945/990, EF SET 63/100 (C1)',
+      level: 'C1 (TOEIC 945/990)',
     },
     {
       name: 'Français',

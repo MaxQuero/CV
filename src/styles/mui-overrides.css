@@ -5,18 +5,19 @@
 
 .MuiChip-root {
   font-family: var(--font-family-heading);
-  font-size: var(--font-size-xs);
+  font-size: var(--font-size-xxs) !important;
   font-weight: var(--font-weight-medium);
   background-color: var(--color-chip-bg);
   color: var(--color-primary-dark);
   border: 1px solid var(--color-chip-border);
   border-radius: var(--radius-md);
-  padding: var(--chip-padding-block) var(--chip-padding-inline);
+  padding: var(--chip-padding-block) var(--chip-padding-inline) !important;
+  min-height: 1.2rem !important;
   height: auto;
 }
 
 .MuiChip-label {
-  padding: var(--chip-label-padding);
+  padding: var(--chip-label-padding) !important;
 }
 
 .MuiChip-root.MuiChip-colorPrimary {
@@ -40,7 +41,7 @@
   box-shadow: var(--shadow-sm);
 }
 
-/* MuiCard : uniquement Zone d’Impact ; fond / sombre = MajorExperienceSection.module.css */
+/* MuiCard : cartes expériences pro ; fond / sombre = MajorExperienceSection.module.css */
 .MuiCard-root {
   border-radius: var(--radius-lg);
   border: none;
@@ -52,4 +53,3 @@
 .MuiCard-root.card-liseret {
   border-radius: 0;
 }
-

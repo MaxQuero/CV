@@ -1,37 +1,35 @@
 .card {
-  margin-bottom: var(--spacing-1);
+  margin-bottom: var(--spacing-xs);
 }
 
 .cardContent {
-  padding: var(--spacing-1) var(--spacing-1) var(--spacing-1);
+  padding: var(--card-content-padding) !important;
 }
 
 .cardContent > :last-child {
-  padding-bottom: var(--spacing-1);
+  padding-bottom: var(--spacing-xs);
 }
 
 .position {
   margin-bottom: var(--spacing-xs);
+  font-family: var(--font-family-heading);
+  font-size: var(--font-size-lg);
   font-weight: var(--font-weight-bold);
-  line-height: 1.28;
+  line-height: 1.25;
 }
 
 .meta {
-  margin-bottom: var(--spacing-1);
+  margin-bottom: var(--spacing-xs);
 }
 
-.divider {
-  margin-block: var(--spacing-1) var(--spacing-md);
-}
 
 .foundationPaper {
-  margin-bottom: var(--spacing-1);
-  padding: var(--spacing-1) var(--spacing-1) var(--spacing-1);
+  margin-bottom: var(--spacing-xs);
 }
 
 .foundationBody {
-  margin-bottom: var(--spacing-xs);
-  line-height: var(--line-height-relaxed);
+  margin-bottom: var(--spacing-2xs);
+  line-height: var(--line-height-normal);
 }
 
 .period {
@@ -45,67 +43,15 @@
 }
 
 .foundationDescription {
-  margin-bottom: var(--spacing-xs);
+  margin-bottom: var(--spacing-2xs);
 }
 
 .chipList {
-  margin-top: 0.15rem;
+  margin-top: var(--spacing-xs);
 }
 
 .foundationTechInline {
   display: none;
   margin-top: 0.15rem;
   font-size: 0.7rem;
-}
-
-@media print {
-  .card {
-    margin-bottom: var(--spacing-2xs);
-  }
-
-  .cardContent {
-    padding: var(--spacing-2xs) var(--spacing-sm);
-  }
-
-  .cardContent > :last-child {
-    padding-bottom: 0;
-  }
-
-  .position {
-    margin-bottom: 0;
-    font-size: 0.85rem;
-  }
-
-  .meta {
-    margin-bottom: var(--spacing-2xs);
-  }
-
-  .divider {
-    display: none;
-  }
-
-  .chipList {
-    margin-top: 0.2rem;
-  }
-
-  .foundationPaper {
-    margin-bottom: var(--spacing-xs);
-    padding: var(--spacing-2xs) var(--spacing-sm);
-  }
-
-  .foundationBody {
-    margin-bottom: 0.1rem;
-  }
-
-  .foundationDescription {
-    margin-bottom: 0;
-  }
-
-  .foundationTechChips {
-    display: none !important;
-  }
-
-  .foundationTechInline {
-    display: block;
-  }
 }

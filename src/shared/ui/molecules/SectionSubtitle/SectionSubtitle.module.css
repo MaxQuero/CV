@@ -2,11 +2,11 @@
   display: block;
   width: 100%;
   max-width: 100%;
-  margin-bottom: var(--spacing-sm);
+  margin-bottom: var(--spacing-2xs) !important;
   padding: 0 0 var(--spacing-2xs);
   border-bottom: 2px solid rgb(var(--rgb-primary) / 0.35);
   font-family: var(--font-family-heading);
-  font-size: var(--font-size-sm);
+  font-size: var(--font-size-xs);
   font-weight: var(--font-weight-semibold);
   letter-spacing: var(--letter-spacing-normal);
   text-transform: none;

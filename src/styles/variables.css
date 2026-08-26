@@ -57,13 +57,9 @@
   --color-border: rgb(var(--rgb-primary) / 0.16);
   --color-border-light: rgb(var(--rgb-primary) / 0.1);
   --color-border-hover: rgb(var(--rgb-primary) / 0.28);
-  --color-divider: rgb(var(--rgb-primary) / 0.12);
 
   --gradient-primary: linear-gradient(135deg, var(--color-primary-dark) 0%, var(--color-primary) 100%);
   --gradient-primary-hover: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-light) 100%);
-  --gradient-timeline: linear-gradient(180deg, var(--color-primary) 0%, var(--color-primary-light) 100%);
-  /* Fil de timeline : ton uni très doux (plus “app” qu’un dégradé bicolore) */
-  --gradient-timeline-line: linear-gradient(180deg, rgb(var(--rgb-primary) / 0.2) 0%, rgb(var(--rgb-primary) / 0.12) 100%);
   --gradient-background: linear-gradient(180deg, var(--color-background-default) 0%, var(--color-background-paper) 100%);
   /* Compat : calques légers (page / header peuvent en combiner 1–2) */
   --gradient-page-wash: radial-gradient(100% 70% at 100% 0%, rgb(var(--rgb-primary) / 0.1) 0%, transparent 55%),
@@ -83,7 +79,6 @@
   --shadow-xl: 0 20px 40px rgb(var(--rgb-ink) / 0.09);
   --shadow-primary: 0 4px 16px rgb(var(--rgb-primary) / 0.18);
   --shadow-primary-hover: 0 8px 24px rgb(var(--rgb-primary) / 0.22);
-  --shadow-timeline-dot: 0 1px 4px rgb(var(--rgb-ink) / 0.1);
   --glow-canopy: none;
 
   --spacing-2xs: 0.25rem;
@@ -96,20 +91,6 @@
   --spacing-2xl: 4rem;
   --spacing-3xl: 5rem;
 
-  /* Timeline : axe unique (ligne + pastille centrés). gutter = marge contenu ; axis = centre du fil */
-  --spacing-timeline-gutter: 1.5rem;
-  --spacing-timeline-axis: 0.75rem;
-  --spacing-timeline-dot-left: calc(
-    var(--spacing-timeline-axis) - var(--spacing-timeline-gutter) - 0.5 * var(--spacing-timeline-dot-size)
-  );
-  --spacing-timeline-dot-top: 6px;
-  --spacing-timeline-line-left: 0.75rem;
-  --spacing-timeline-line-width: 1px;
-  --spacing-timeline-dot-size: 10px;
-  --spacing-timeline-dot-border: 2.5px;
-  /* rétrocompat, équiv. gutter */
-  --spacing-timeline-left: var(--spacing-timeline-gutter);
-
   --radius-sm: 8px;
   --radius-md: 12px;
   --radius-lg: 16px;
@@ -118,6 +99,7 @@
   --radius-pill: 9999px;
   --radius-full: 50%;
 
+  --font-size-xxs: 0.65rem;
   --font-size-xs: 0.75rem;
   --font-size-sm: 0.875rem;
   --font-size-base: 1rem;
@@ -154,13 +136,15 @@
   --color-chip-bg-hover: rgb(var(--rgb-primary) / 0.14);
   --chip-padding-inline: 0.5rem;
   --chip-padding-block: 0.25rem;
-  --chip-label-padding: 0 2px;
+  --chip-label-padding: 2px;
   --button-padding-inline: 24px;
   --button-padding-block: 10px;
   /* « Carte » moderne : ombre douce + filet ghost (pas gros bordure pleine) */
   --color-card-border: transparent;
   --color-card-border-hover: transparent;
   --color-card-outline: rgb(var(--rgb-tertiary) / 0.32);
+  /* MUI CardContent / cartes expérience — remplace l’équivalent 16px par défaut */
+  --card-content-padding: 12px;
   --shadow-card:
     0 0 0 0.5px var(--color-card-outline),
     0 1px 2px rgb(var(--rgb-ink) / 0.04),
@@ -171,7 +155,12 @@
 
   --shadow-header: 0 1px 0 rgb(var(--rgb-ink) / 0.06), 0 12px 40px -24px rgb(var(--rgb-ink) / 0.12);
   --shadow-button-emboss: none;
-  --layout-max-tagline-ch: 58ch;
+  /* Zone document type A4 (~10 mm de marge si tu configures pareil côté impression) */
+  --cv-sheet-w: 190mm;
+  --cv-sheet-min-h: 277mm;
+  --page-bleed-inline: clamp(0.5rem, 3vw, 1.25rem);
+
+  --layout-max-tagline-ch: 75ch;
   --layout-section-title-gap: 0.5rem;
   --size-section-accent-bar: 3px;
   --size-separator-dot: 4px;
@@ -218,45 +207,34 @@
 }
 
 /**
- * Impression A4 (Ctrl+P) : on conserve les couleurs CSS (fonds, dégradés)
- * sinon les navigateurs strippent les backgrounds par défaut. L’utilisateur
- * doit aussi laisser cochée l’option "Graphismes en arrière-plan" du dialogue.
+ * Densité typographique unique (écran + PDF) : une seule échelle rem pour le CV.
+ */
+html {
+  font-size: 87.5%;
+}
+
+/**
+ * Conserve couleurs / dégradés à l’impression (sinon le navigateur les retire
+ * par défaut). Activer « Graphismes en arrière-plan » dans la boîte d’impression.
  */
 @page {
-  size: A4 portrait;
-  margin: 6mm;
+  size: A4;
+  margin: 0;
 }
 
 @media print {
-  html {
-    font-size: 12px;
+  body {
+    padding: 6px;
+    box-sizing: border-box;
+    /* Même fond que `.root` (CVPage) pour que la gouttière soit visible à l’impression */
+    background-color: var(--color-background-default);
+    background-image: var(--gradient-page-wash), var(--gradient-background);
+    background-repeat: no-repeat;
   }
 
   html,
   body {
-    background: var(--color-background-default);
     -webkit-print-color-adjust: exact;
     print-color-adjust: exact;
-    min-height: 0;
-  }
-
-  *,
-  *::before,
-  *::after {
-    -webkit-print-color-adjust: exact !important;
-    print-color-adjust: exact !important;
-  }
-
-  :root {
-    --spacing-2xs: 0.12rem;
-    --spacing-xs: 0.3rem;
-    --spacing-sm: 0.35rem;
-    --spacing-1: 0.4rem;
-    --spacing-md: 0.5rem;
-    --spacing-lg: 0.7rem;
-    --spacing-xl: 0.85rem;
-    --line-height-loose: 1.25;
-    --line-height-relaxed: 1.22;
-    --line-height-normal: 1.22;
   }
 }
