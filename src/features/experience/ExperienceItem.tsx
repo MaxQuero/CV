@@ -1,0 +1,36 @@
+import { Experience } from '../../core/types/cv.types';
+import styles from './ExperienceItem.module.css';
+
+interface ExperienceItemProps {
+  experience: Experience;
+}
+
+export const ExperienceItem = ({ experience }: ExperienceItemProps) => {
+  const { position, company, client, startDate, endDate, location, context, achievements, technologies } =
+    experience;
+
+  return (
+    <article className={styles.item}>
+      <div className={styles.head}>
+        <h3 className={styles.position}>{position}</h3>
+        <p className={styles.dates}>
+          <time>{startDate}</time> – <time>{endDate}</time>
+        </p>
+      </div>
+      <p className={styles.company}>
+        <strong>{company}</strong>
+        {client && <> · client {client}</>}
+        {location && <span className={styles.location}> · {location}</span>}
+      </p>
+      <p className={styles.context}>{context}</p>
+      <ul className={styles.achievements}>
+        {achievements.map((achievement) => (
+          <li key={achievement}>{achievement}</li>
+        ))}
+      </ul>
+      <p className={styles.stack}>
+        <span className={styles.stackLabel}>Stack :</span> {technologies.join(', ')}
+      </p>
+    </article>
+  );
+};

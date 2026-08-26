@@ -1,59 +1,33 @@
-# CV React Moderne
+# CV Maxime QUERO
 
-CV moderne et professionnel développé avec React, TypeScript, MUI et Vite, exécuté par Bun.
+CV une page A4, sobre, compatible ATS. React 18 + TypeScript + Vite, CSS modules, police Inter. Aucune librairie UI.
 
-## Stack Technique
-
-- **Runtime** : Bun
-- **Build Tool** : Vite
-- **Framework** : React 18 + TypeScript
-- **UI Library** : Material-UI (MUI) v5
-- **Styling** : Emotion (intégré avec MUI)
-- **PDF Export** : @react-pdf/renderer
-- **Icons** : react-icons, @mui/icons-material
-
-## Installation
+## Commandes
 
 ```bash
 bun install
-```
-
-## Développement
-
-```bash
-bun dev
-```
-
-## Build
-
-```bash
+bun dev        # http://localhost:5173
 bun run build
+bun run lint
 ```
 
-## Prévisualisation
+## Export PDF
 
-```bash
-bun run preview
-```
+1. Ouvrir le CV dans Chrome / Edge.
+2. Cmd+P (Ctrl+P), destination « Enregistrer au format PDF ».
+3. Format A4, marges « Aucune », échelle 100 %, « Graphismes d'arrière-plan » activé.
 
-## Architecture
+Le document est calibré pour tenir sur exactement une page. Si le texte déborde, réduire le contenu dans `src/core/data/cvData.ts` ou ajuster `--fs-body` / `--gap-section` dans `src/styles/tokens.css`.
 
-Le projet suit une architecture simplifiée avec Atomic Design :
+## Structure
 
-- **Atomes** : Composants MUI de base (Typography, Button, Card, Chip, etc.)
-- **Molécules** : Composants assemblés (Section, ExperienceItem, ContactInfo, etc.)
-- **Organismes** : Sections complexes (CVHeader, ExperienceSection, etc.)
+- `src/core/data/cvData.ts` : contenu du CV (seul fichier à éditer au quotidien).
+- `src/core/types/cv.types.ts` : modèle de données.
+- `src/features/*` : sections (header, expériences, compétences, formation, langues).
+- `src/styles/` : tokens, base, impression.
 
-## Design System
+## Règles ATS
 
-Thème "Modern Tech / Dark Mode" :
-- Palette : Background #0F172A, Paper #1E293B, Primary #10B981
-- Typography : Inter (corps), JetBrains Mono (titres et chips)
-- Chips stylisés comme des tags de code
-
-## Fonctionnalités
-
-- Affichage responsive du CV
-- Export PDF vectoriel de qualité professionnelle
-- Approche STAR pour les expériences majeures
-- Format compact pour les expériences fondations
+- Texte réel uniquement : pas d'icône porteuse d'information, pas d'image, pas de tableau.
+- Titres de section standards, hiérarchie h1 / h2 / h3, ordre DOM sémantique.
+- Une seule police, tailles ≥ 8.4 pt, un seul accent couleur.

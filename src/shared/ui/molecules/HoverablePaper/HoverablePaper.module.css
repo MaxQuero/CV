@@ -1,7 +1,0 @@
-/* Blocs secondaires : fond teinté + ombre */
-.root {
-  border-radius: var(--radius-md);
-  background-color: rgb(var(--rgb-tertiary) / 0.1);
-  border: none;
-  box-shadow: var(--shadow-card);
-}

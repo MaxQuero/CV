@@ -1,0 +1,17 @@
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 1mm;
+}
+
+.item {
+  display: flex;
+  justify-content: space-between;
+  gap: 2mm;
+}
+
+.level {
+  font-size: var(--fs-small);
+  color: var(--ink-3);
+  text-align: right;
+}

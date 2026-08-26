@@ -1,0 +1,57 @@
+.header {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-template-areas:
+    'identity contact'
+    'summary summary';
+  column-gap: var(--gutter);
+  row-gap: 2.5mm;
+  padding-bottom: 3.5mm;
+  border-bottom: 2px solid var(--ink);
+}
+
+.identity {
+  grid-area: identity;
+}
+
+.name {
+  font-size: var(--fs-h1);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  line-height: 1.1;
+  color: var(--ink);
+}
+
+.lastName {
+  color: var(--accent);
+}
+
+.title {
+  margin-top: 1.2mm;
+  font-size: var(--fs-title);
+  font-weight: 500;
+  color: var(--ink-2);
+}
+
+.contact {
+  grid-area: contact;
+  align-self: end;
+  text-align: right;
+}
+
+.contactList {
+  font-size: var(--fs-small);
+  line-height: 1.45;
+  color: var(--ink-2);
+}
+
+.contactList a {
+  color: var(--ink-2);
+}
+
+.summary {
+  grid-area: summary;
+  font-size: var(--fs-body);
+  color: var(--ink-2);
+  max-width: 100%;
+}
