@@ -28,9 +28,13 @@ export const ExperienceItem = ({ experience }: ExperienceItemProps) => {
           <li key={achievement}>{achievement}</li>
         ))}
       </ul>
-      <p className={styles.stack}>
-        <span className={styles.stackLabel}>Stack :</span> {technologies.join(', ')}
-      </p>
+      <ul className={styles.stack} aria-label="Technologies">
+        {technologies.map((tech) => (
+          <li key={tech} className={styles.tag}>
+            {tech}
+          </li>
+        ))}
+      </ul>
     </article>
   );
 };

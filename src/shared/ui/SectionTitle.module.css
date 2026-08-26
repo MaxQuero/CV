@@ -1,10 +1,27 @@
 .title {
+  display: flex;
+  align-items: center;
+  gap: 2mm;
   font-size: var(--fs-h2);
   font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--accent);
-  padding-bottom: 1.2mm;
-  margin-bottom: 2.2mm;
-  border-bottom: 1.5px solid var(--accent);
+  color: var(--navy);
+  margin-bottom: 2.4mm;
+}
+
+.title::before {
+  content: '';
+  width: 1.4mm;
+  height: 3.6mm;
+  border-radius: 1mm;
+  background: var(--teal);
+  flex-shrink: 0;
+}
+
+.title::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--rule);
 }

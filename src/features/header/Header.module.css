@@ -5,9 +5,10 @@
     'identity contact'
     'summary summary';
   column-gap: var(--gutter);
-  row-gap: 2.5mm;
-  padding-bottom: 3.5mm;
-  border-bottom: 2px solid var(--ink);
+  row-gap: 3mm;
+  padding: var(--header-pad-y) var(--margin) 7mm;
+  background: linear-gradient(135deg, var(--navy-deep) 0%, var(--navy) 100%);
+  color: var(--on-dark);
 }
 
 .identity {
@@ -18,19 +19,19 @@
   font-size: var(--fs-h1);
   font-weight: 700;
   letter-spacing: -0.01em;
-  line-height: 1.1;
-  color: var(--ink);
+  line-height: 1.05;
+  color: var(--on-dark);
 }
 
 .lastName {
-  color: var(--accent);
+  color: #7fd3d4;
 }
 
 .title {
-  margin-top: 1.2mm;
+  margin-top: 1.6mm;
   font-size: var(--fs-title);
   font-weight: 500;
-  color: var(--ink-2);
+  color: var(--on-dark-muted);
 }
 
 .contact {
@@ -41,17 +42,18 @@
 
 .contactList {
   font-size: var(--fs-small);
-  line-height: 1.45;
-  color: var(--ink-2);
+  line-height: 1.5;
+  color: var(--on-dark-muted);
 }
 
 .contactList a {
-  color: var(--ink-2);
+  color: var(--on-dark);
 }
 
 .summary {
   grid-area: summary;
   font-size: var(--fs-body);
-  color: var(--ink-2);
-  max-width: 100%;
+  color: var(--on-dark-muted);
+  padding-top: 2.5mm;
+  border-top: 1px solid rgb(255 255 255 / 0.18);
 }

@@ -3,9 +3,8 @@
   width: var(--sheet-w);
   height: var(--sheet-h);
   margin: 12mm auto;
-  padding: var(--sheet-pad-y) var(--sheet-pad-x);
   background: var(--paper);
-  box-shadow: 0 2px 16px rgb(0 0 0 / 0.12);
+  box-shadow: 0 2px 16px rgb(0 0 0 / 0.14);
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -13,9 +12,7 @@
 
 .columns {
   display: grid;
-  grid-template-columns: 1fr 58mm;
-  column-gap: var(--gutter);
-  margin-top: var(--gap-section);
+  grid-template-columns: 1fr var(--side-w);
   flex: 1;
   min-height: 0;
 }
@@ -28,9 +25,13 @@
   min-width: 0;
 }
 
+.mainCol {
+  padding: 7mm var(--gutter) var(--margin) var(--margin);
+}
+
 .sideCol {
-  padding-left: var(--gutter);
-  border-left: 1px solid var(--rule-light);
+  padding: 7mm var(--margin) var(--margin) var(--gutter);
+  background: var(--side-bg);
 }
 
 @media print {

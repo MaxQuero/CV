@@ -13,7 +13,7 @@
 .period {
   font-size: var(--fs-small);
   font-weight: 500;
-  color: var(--accent);
+  color: var(--teal);
   white-space: nowrap;
   padding-top: 0.15mm;
 }

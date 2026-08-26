@@ -1,31 +1,40 @@
-/* Design tokens : sobre, imprimable, un seul accent. */
+/* Design tokens : moderne, imprimable, 100 % texte. */
 :root {
   --font-body: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
 
-  --ink: #1a1a1a;
-  --ink-2: #4a4a4a;
-  --ink-3: #6b6b6b;
-  --accent: #1f4e79;
-  --rule: #d6d6d6;
-  --rule-light: #e8e8e8;
-  --paper: #ffffff;
-  --screen-bg: #e9ecef;
+  --ink: #1c2430;
+  --ink-2: #4b5563;
+  --ink-3: #6b7280;
 
-  --fs-h1: 22pt;
+  --navy: #16304f;
+  --navy-deep: #0f2239;
+  --accent: #1f4e79;
+  --teal: #0f8b8d;
+  --teal-soft: #e3f3f3;
+
+  --paper: #ffffff;
+  --side-bg: #f3f6fa;
+  --rule: #d9dee6;
+  --on-dark: #ffffff;
+  --on-dark-muted: #c7d3e3;
+  --screen-bg: #e6e9ee;
+
+  --fs-h1: 24pt;
   --fs-title: 11pt;
   --fs-h2: 9.5pt;
   --fs-h3: 10pt;
   --fs-body: 9.5pt;
-  --fs-small: 8.6pt;
+  --fs-small: 8.5pt;
 
   --lh: 1.34;
 
   --sheet-w: 210mm;
   --sheet-h: 297mm;
-  --sheet-pad-y: 10mm;
-  --sheet-pad-x: 13mm;
-  --gutter: 7mm;
+  --margin: 13mm;
+  --header-pad-y: 10mm;
+  --gutter: 6mm;
+  --side-w: 62mm;
 
-  --gap-section: 4.5mm;
-  --gap-item: 3mm;
+  --gap-section: 6.5mm;
+  --gap-item: 4.5mm;
 }
