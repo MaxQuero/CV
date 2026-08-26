@@ -2,22 +2,22 @@
 :root {
   --font-body: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
 
-  --ink: #1c2430;
-  --ink-2: #4b5563;
-  --ink-3: #6b7280;
+  --ink: #23271f;
+  --ink-2: #4f554a;
+  --ink-3: #737a6d;
 
-  --navy: #16304f;
-  --navy-deep: #0f2239;
-  --accent: #1f4e79;
-  --teal: #0f8b8d;
-  --teal-soft: #e3f3f3;
+  --navy: #234134;
+  --navy-deep: #172c23;
+  --accent: #3f6b55;
+  --teal: #5f8a72;
+  --teal-soft: #e7efe8;
 
   --paper: #ffffff;
-  --side-bg: #f3f6fa;
-  --rule: #d9dee6;
+  --side-bg: #f5f1e8;
+  --rule: #d9d6cc;
   --on-dark: #ffffff;
-  --on-dark-muted: #c7d3e3;
-  --screen-bg: #e6e9ee;
+  --on-dark-muted: #cfd9cf;
+  --screen-bg: #e8e6df;
 
   --fs-h1: 24pt;
   --fs-title: 11pt;
