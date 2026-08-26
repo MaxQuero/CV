@@ -4,7 +4,7 @@ export const cvData: CVData = {
   personalInfo: {
     firstName: 'Maxime',
     lastName: 'QUERO',
-    title: 'Senior Fullstack Engineer · Référent Technique · AI-Augmented Engineering',
+    title: 'Senior Fullstack Engineer · Référent Technique & IA',
     summary:
       'Ingénieur fullstack avec 11 ans d’expérience (TypeScript, Node.js, React, Cloud GCP/AWS). Référent technique en environnement bancaire et paiement (PCI-DSS) : architecture Clean / Hexagonale / DDD, qualité logicielle, industrialisation du delivery par agents IA (Claude Code, MCP). Orienté impact produit et fiabilité en production.',
     email: 'maxime.quero@gmail.com',
@@ -17,7 +17,7 @@ export const cvData: CVData = {
     {
       company: 'Conserto',
       client: 'HiPay',
-      position: 'Senior Fullstack Engineer & Référent Technique',
+      position: 'Référent Technique & IA (AI-Augmented Engineering) · Senior Fullstack Engineer',
       startDate: 'Jan. 2024',
       endDate: 'Aujourd’hui',
       location: 'Nantes',
@@ -25,7 +25,7 @@ export const cvData: CVData = {
         'Plateforme de paiement PCI-DSS. Référent technique et innovation, en charge de la modernisation de l’architecture et du delivery.',
       achievements: [
         'Conçu et piloté la V2 modulaire d’intégration des moyens de paiement (Google Pay, Apple Pay…) : discovery, architecture hexagonale, ADRs, mise en production du socle.',
-        'Mis en place un socle d’AI-augmented engineering (context engineering, CLAUDE.md, skills, MCP Jira) permettant l’implémentation de tickets de bout en bout par agent IA sous revue humaine.',
+        'Porté la démarche AI-augmented engineering au niveau de l’équipe : conçu le socle (context engineering, CLAUDE.md, skills, MCP Jira) permettant l’implémentation de tickets de bout en bout par agent IA sous revue humaine, et accompagné son adoption.',
         'Refondu le connecteur Shopify (Node.js, Terraform, GCP) et livré la logique de paiement mixte (Mix Payment) en production.',
         'POC d’ajout automatisé de moyens de paiement par IA validé ; industrialisation planifiée fin 2026.',
       ],

@@ -22,10 +22,10 @@
 
   --sheet-w: 210mm;
   --sheet-h: 297mm;
-  --sheet-pad-y: 11mm;
+  --sheet-pad-y: 10mm;
   --sheet-pad-x: 13mm;
   --gutter: 7mm;
 
-  --gap-section: 5mm;
-  --gap-item: 3.4mm;
+  --gap-section: 4.5mm;
+  --gap-item: 3mm;
 }
