@@ -34,10 +34,10 @@
   --sheet-w: 210mm;
   --sheet-h: 297mm;
   --margin: 13mm;
-  --header-pad-y: 10mm;
+  --header-pad-y: 9mm;
   --gutter: 6mm;
   --side-w: 62mm;
 
-  --gap-section: 5.8mm;
+  --gap-section: 5.2mm;
   --gap-item: 4.5mm;
 }

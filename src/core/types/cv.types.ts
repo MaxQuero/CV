@@ -1,8 +1,13 @@
+export interface Highlight {
+  label: string;
+  text: string;
+}
+
 export interface PersonalInfo {
   firstName: string;
   lastName: string;
   title: string;
-  summary: string;
+  highlights: Highlight[];
   email: string;
   phone?: string;
   location?: string;

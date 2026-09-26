@@ -1,4 +1,5 @@
 import { Experience } from '../../core/types/cv.types';
+import { RichText } from '../../shared/ui/RichText';
 import styles from './ExperienceItem.module.css';
 
 interface ExperienceItemProps {
@@ -25,7 +26,9 @@ export const ExperienceItem = ({ experience }: ExperienceItemProps) => {
       </p>
       <ul className={styles.achievements}>
         {achievements.map((achievement) => (
-          <li key={achievement}>{achievement}</li>
+          <li key={achievement}>
+            <RichText text={achievement} />
+          </li>
         ))}
       </ul>
       <ul className={styles.stack} aria-label="Technologies">

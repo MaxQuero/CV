@@ -1,6 +1,7 @@
 import { Project } from '../../core/types/cv.types';
 import { SectionTitle } from '../../shared/ui/SectionTitle';
 import { SECTION_TITLES } from '../../utils/constants';
+import { RichText } from '../../shared/ui/RichText';
 import styles from './ExperienceItem.module.css';
 
 interface ProjectSectionProps {
@@ -31,7 +32,9 @@ export const ProjectSection = ({ projects }: ProjectSectionProps) => (
         )}
         <ul className={styles.achievements}>
           {project.achievements.map((achievement) => (
-            <li key={achievement}>{achievement}</li>
+            <li key={achievement}>
+              <RichText text={achievement} />
+            </li>
           ))}
         </ul>
         <ul className={styles.stack} aria-label="Technologies">

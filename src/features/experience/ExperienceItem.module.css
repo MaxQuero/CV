@@ -44,6 +44,11 @@
   padding-left: 0.5mm;
 }
 
+.achievements strong {
+  font-weight: 600;
+  color: var(--navy);
+}
+
 .achievements li::marker {
   color: var(--wood-soft);
 }

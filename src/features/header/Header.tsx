@@ -8,7 +8,7 @@ interface HeaderProps {
 const stripProtocol = (url: string) => url.replace(/^https?:\/\/(www\.)?/, '');
 
 export const Header = ({ personalInfo }: HeaderProps) => {
-  const { firstName, lastName, title, summary, email, phone, location, linkedIn, github } = personalInfo;
+  const { firstName, lastName, title, highlights, email, phone, location, linkedIn, github } = personalInfo;
 
   return (
     <header className={styles.header}>
@@ -43,7 +43,14 @@ export const Header = ({ personalInfo }: HeaderProps) => {
         </ul>
       </address>
 
-      <p className={styles.summary}>{summary}</p>
+      <ul className={styles.highlights}>
+        {highlights.map((highlight) => (
+          <li key={highlight.label} className={styles.highlight}>
+            <span className={styles.highlightLabel}>{highlight.label}</span>
+            <span className={styles.highlightText}>{highlight.text}</span>
+          </li>
+        ))}
+      </ul>
     </header>
   );
 };
