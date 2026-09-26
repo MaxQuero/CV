@@ -1,5 +1,6 @@
 /* Design tokens : moderne, imprimable, 100 % texte. */
 :root {
+  --font-display: Fraunces, Georgia, 'Times New Roman', serif;
   --font-body: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
 
   --ink: #23271f;
@@ -11,6 +12,8 @@
   --accent: #3f6b55;
   --teal: #5f8a72;
   --teal-soft: #e7efe8;
+  --wood: #9a6b3f;
+  --wood-soft: #c9a27a;
 
   --paper: #ffffff;
   --side-bg: #f5f1e8;
@@ -35,6 +38,6 @@
   --gutter: 6mm;
   --side-w: 62mm;
 
-  --gap-section: 7mm;
+  --gap-section: 5.8mm;
   --gap-item: 4.5mm;
 }

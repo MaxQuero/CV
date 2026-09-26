@@ -7,7 +7,8 @@
   column-gap: var(--gutter);
   row-gap: 3mm;
   padding: var(--header-pad-y) var(--margin) 7mm;
-  background: linear-gradient(135deg, var(--navy-deep) 0%, #4f7a63 100%);
+  background: var(--topo) right center / auto 100% no-repeat, linear-gradient(135deg, var(--navy-deep) 0%, #4f7a63 100%);
+  position: relative;
   color: var(--on-dark);
 }
 
@@ -16,9 +17,10 @@
 }
 
 .name {
-  font-size: var(--fs-h1);
-  font-weight: 700;
-  letter-spacing: -0.01em;
+  font-family: var(--font-display);
+  font-size: 27pt;
+  font-weight: 600;
+  letter-spacing: -0.005em;
   line-height: 1.05;
   color: var(--on-dark);
 }
