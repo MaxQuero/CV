@@ -13,11 +13,21 @@ export interface PersonalInfo {
 export interface Experience {
   company: string;
   client?: string;
+  sector?: string;
   position: string;
   startDate: string;
   endDate: string;
   location?: string;
-  context: string;
+  achievements: string[];
+  technologies: string[];
+}
+
+export interface Project {
+  name: string;
+  description: string;
+  period: string;
+  status?: string;
+  url?: string;
   achievements: string[];
   technologies: string[];
 }
@@ -48,6 +58,7 @@ export interface Language {
 export interface CVData {
   personalInfo: PersonalInfo;
   experiences: Experience[];
+  projects: Project[];
   previousExperiences: PreviousExperience[];
   education: Education[];
   skills: SkillGroup[];

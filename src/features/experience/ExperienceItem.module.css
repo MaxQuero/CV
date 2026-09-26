@@ -34,11 +34,6 @@
   color: var(--ink-3);
 }
 
-.context {
-  color: var(--ink-2);
-  font-style: italic;
-}
-
 .achievements {
   padding-left: 3.5mm;
   list-style: disc;

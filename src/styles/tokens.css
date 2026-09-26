@@ -26,7 +26,7 @@
   --fs-body: 9.5pt;
   --fs-small: 8.5pt;
 
-  --lh: 1.34;
+  --lh: 1.4;
 
   --sheet-w: 210mm;
   --sheet-h: 297mm;
@@ -35,6 +35,6 @@
   --gutter: 6mm;
   --side-w: 62mm;
 
-  --gap-section: 6.5mm;
+  --gap-section: 7mm;
   --gap-item: 4.5mm;
 }

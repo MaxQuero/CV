@@ -6,7 +6,7 @@ interface ExperienceItemProps {
 }
 
 export const ExperienceItem = ({ experience }: ExperienceItemProps) => {
-  const { position, company, client, startDate, endDate, location, context, achievements, technologies } =
+  const { position, company, client, sector, startDate, endDate, location, achievements, technologies } =
     experience;
 
   return (
@@ -20,9 +20,9 @@ export const ExperienceItem = ({ experience }: ExperienceItemProps) => {
       <p className={styles.company}>
         <strong>{company}</strong>
         {client && <> · client {client}</>}
+        {sector && <span className={styles.location}> ({sector})</span>}
         {location && <span className={styles.location}> · {location}</span>}
       </p>
-      <p className={styles.context}>{context}</p>
       <ul className={styles.achievements}>
         {achievements.map((achievement) => (
           <li key={achievement}>{achievement}</li>

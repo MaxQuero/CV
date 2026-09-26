@@ -1,6 +1,7 @@
 import { cvData } from '../core/data/cvData';
 import { Header } from '../features/header/Header';
 import { ExperienceSection } from '../features/experience/ExperienceSection';
+import { ProjectSection } from '../features/experience/ProjectSection';
 import { PreviousExperiences } from '../features/experience/PreviousExperiences';
 import { SkillsSection } from '../features/skills/SkillsSection';
 import { EducationSection } from '../features/education/EducationSection';
@@ -13,6 +14,7 @@ export const CVPage = () => (
     <div className={styles.columns}>
       <div className={styles.mainCol}>
         <ExperienceSection experiences={cvData.experiences} />
+        <ProjectSection projects={cvData.projects} />
         <PreviousExperiences experiences={cvData.previousExperiences} />
       </div>
       <aside className={styles.sideCol}>
