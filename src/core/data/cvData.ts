@@ -51,7 +51,7 @@ export const cvData: CVData = {
     {
       company: 'Conserto',
       client: 'My Money Bank',
-      sector: 'banque, regroupement de crédits',
+      sector: 'regroupement de crédits',
       position: 'Fullstack Engineer',
       startDate: 'Oct. 2021',
       endDate: 'Déc. 2022',
@@ -76,7 +76,7 @@ export const cvData: CVData = {
     },
   ],
   previousExperiences: [
-    { period: '2020 – 2021', company: 'Conserto (EP)', position: 'Frontend Engineer', technologies: ['Angular', 'TypeScript'] },
+    { period: '2020 – 2021', company: 'EP (Conserto)', position: 'Frontend Engineer', technologies: ['Angular', 'TypeScript'] },
     { period: '2019 – 2020', company: 'Fifty Truck', position: 'Fullstack Engineer', technologies: ['Laravel', 'Angular'] },
     { period: '2017 – 2019', company: 'Digital Garden, Start-up Palace', position: 'Fullstack Engineer', technologies: ['Symfony'] },
     { period: '2014 – 2016', company: 'CGI (alternance)', position: 'Fullstack e-commerce', technologies: ['Magento', 'Symfony'] },

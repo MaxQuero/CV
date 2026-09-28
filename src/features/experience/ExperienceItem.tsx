@@ -19,9 +19,9 @@ export const ExperienceItem = ({ experience }: ExperienceItemProps) => {
         </p>
       </div>
       <p className={styles.company}>
-        <strong>{company}</strong>
-        {client && <> · client {client}</>}
+        <strong>{client ?? company}</strong>
         {sector && <span className={styles.location}> ({sector})</span>}
+        {client && <> · consultant {company}</>}
         {location && <span className={styles.location}> · {location}</span>}
       </p>
       <ul className={styles.achievements}>
