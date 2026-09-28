@@ -1,6 +1,6 @@
 """Generate the CV header background patterns as a CSS custom property.
 
-Usage: python3 scripts/header_patterns.py <topo|wood|fern|network|halftone|tree> src/features/header/topo.css
+Usage: python3 scripts/header_patterns.py <topo|wood|fern|network|halftone|tree|treenet> src/features/header/topo.css
 """
 
 import math
@@ -244,6 +244,25 @@ def body_tree():
     return "".join(out)
 
 
+def body_treenet():
+    rnd = random.Random(11)
+    lines, nodes = [], []
+
+    def branch(x, y, ang, length, depth, width):
+        x2, y2 = x + length * math.cos(ang), y + length * math.sin(ang)
+        lines.append(f"<path d='M{x:.1f},{y:.1f} L{x2:.1f},{y2:.1f}' stroke-width='{width:.2f}' stroke-opacity='0.14'/>")
+        if depth == 1 or length < 6:
+            nodes.append((x2, y2, 2.4))
+            return
+        nodes.append((x2, y2, 1.4))
+        for spread in (-1, 1):
+            branch(x2, y2, ang + spread * rnd.uniform(0.42, 0.78), length * rnd.uniform(0.74, 0.86), depth - 1, max(width * 0.75, 0.6))
+
+    branch(505, 232, -math.pi / 2 + 0.04, 50, 6, 2.2)
+    dots = "".join(f"<circle cx='{x:.1f}' cy='{y:.1f}' r='{r}' fill='white' fill-opacity='0.24' stroke='none'/>" for x, y, r in nodes)
+    return "".join(lines) + dots
+
+
 BODIES = {
     "topo": body_topo,
     "wood": body_wood,
@@ -251,6 +270,7 @@ BODIES = {
     "network": body_network,
     "halftone": body_halftone,
     "tree": body_tree,
+    "treenet": body_treenet,
 }
 
 
