@@ -4,12 +4,12 @@ export const cvData: CVData = {
   personalInfo: {
     firstName: 'Maxime',
     lastName: 'QUERO',
-    title: 'Senior Fullstack Engineer · Agents IA & Architecture',
+    title: 'Senior Fullstack Engineer · IA appliquée & Architecture',
     highlights: [
       { label: 'Fullstack · 11 ans', text: 'TypeScript, Node.js, React\nGCP, AWS' },
       { label: 'Architecture', text: 'Clean / Hexagonale\névénementielle, ADR' },
-      { label: 'Paiement & banque', text: 'HiPay, My Money Bank\nPCI-DSS, DSP2' },
-      { label: 'IA appliquée', text: 'Agents IA au quotidien\nML en Python' },
+      { label: 'Contextes critiques', text: 'Paiement, banque\nPCI-DSS, DSP2' },
+      { label: 'Agents IA', text: 'Claude Code, MCP\ncontext engineering' },
     ],
     email: 'maxime.quero@gmail.com',
     phone: '06 41 75 77 61',
