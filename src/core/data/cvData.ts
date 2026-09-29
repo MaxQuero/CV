@@ -27,7 +27,7 @@ export const cvData: CVData = {
       endDate: 'Aujourd’hui',
       location: 'Nantes',
       achievements: [
-        '**Agents IA** : déployé le context engineering dans l’équipe (CLAUDE.md, ADRs, skills, MCP Jira), tickets livrés de bout en bout sous revue humaine.',
+        '**Agents IA** : déployé le context engineering dans l’équipe (CLAUDE.md, ADRs, skills, MCP), tickets livrés de bout en bout sous revue humaine.',
         '**POC IA** : conçu un flux d’agents automatisant l’ajout d’un moyen de paiement.',
         '**SDK JS marchands** : conçu et réalisé la refonte, architecture V2 modulaire d’intégration des moyens de paiement (ANCV, Google Pay…).',
         '**Mix Payment** (carte cadeau + carte bancaire) : conçu l’architecture et la compensation des transactions en erreur.',
