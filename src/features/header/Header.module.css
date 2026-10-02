@@ -1,0 +1,81 @@
+.header {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-template-areas:
+    'identity contact'
+    'highlights highlights';
+  column-gap: var(--gutter);
+  row-gap: 3mm;
+  padding: var(--header-pad-y) var(--margin) 6mm;
+  background: var(--topo) center / cover no-repeat, linear-gradient(135deg, var(--navy-deep) 0%, #4f7a63 100%);
+  color: var(--on-dark);
+}
+
+.identity {
+  grid-area: identity;
+}
+
+.name {
+  font-family: var(--font-display);
+  font-size: 27pt;
+  font-weight: 600;
+  letter-spacing: -0.005em;
+  line-height: 1.05;
+  color: var(--on-dark);
+}
+
+.lastName {
+  color: #dff0e3;
+}
+
+.title {
+  margin-top: 1.6mm;
+  font-size: var(--fs-title);
+  font-weight: 500;
+  color: var(--on-dark-muted);
+}
+
+.contact {
+  grid-area: contact;
+  align-self: end;
+  text-align: right;
+}
+
+.contactList {
+  font-size: var(--fs-small);
+  line-height: 1.5;
+  color: var(--on-dark-muted);
+}
+
+.contactList a {
+  color: var(--on-dark);
+}
+
+.highlights {
+  grid-area: highlights;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  column-gap: 5mm;
+  padding-top: 3mm;
+  border-top: 1px solid rgb(255 255 255 / 0.3);
+}
+
+.highlight {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6mm;
+}
+
+.highlightLabel {
+  font-family: var(--font-display);
+  font-size: 10.5pt;
+  font-weight: 600;
+  color: #f1e3cf;
+}
+
+.highlightText {
+  white-space: pre-line;
+  font-size: var(--fs-small);
+  line-height: 1.35;
+  color: var(--on-dark-muted);
+}

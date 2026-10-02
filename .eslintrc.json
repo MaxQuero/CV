@@ -24,6 +24,6 @@
   "rules": {
     "react/prop-types": "off",
     "react/react-in-jsx-scope": "off"
-  }
+  },
+  "parser": "@typescript-eslint/parser"
 }
-

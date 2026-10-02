@@ -1,0 +1,28 @@
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 1mm;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 22mm 1fr;
+  column-gap: 3mm;
+}
+
+.period {
+  font-size: var(--fs-small);
+  font-weight: 500;
+  color: var(--wood);
+  white-space: nowrap;
+  padding-top: 0.15mm;
+}
+
+.body {
+  color: var(--ink);
+}
+
+.stack {
+  color: var(--ink-3);
+  font-size: var(--fs-small);
+}

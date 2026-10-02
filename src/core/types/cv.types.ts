@@ -1,60 +1,71 @@
-export interface MajorExperience {
-  type: 'major';
+export interface Highlight {
+  label: string;
+  text: string;
+}
+
+export interface PersonalInfo {
+  firstName: string;
+  lastName: string;
+  title: string;
+  highlights: Highlight[];
+  email: string;
+  phone?: string;
+  location?: string;
+  linkedIn?: string;
+  github?: string;
+}
+
+export interface Experience {
   company: string;
+  client?: string;
+  sector?: string;
   position: string;
   startDate: string;
   endDate: string;
-  star: {
-    situation: string;
-    task: string;
-    action: string[];
-    result: string;
-  };
-  technologies?: string[];
+  location?: string;
+  achievements: string[];
+  technologies: string[];
 }
 
-export interface FoundationExperience {
-  type: 'foundation';
+export interface Project {
+  name: string;
+  description: string;
+  period: string;
+  status?: string;
+  url?: string;
+  achievements: string[];
+  technologies: string[];
+}
+
+export interface PreviousExperience {
   period: string;
   company: string;
   position: string;
-  description: string;
-  technologies?: string[];
+  technologies: string[];
 }
-
-export type Experience = MajorExperience | FoundationExperience;
 
 export interface Education {
   year: string;
-  level: string;
   degree: string;
   school: string;
 }
 
-export interface CVData {
-  personalInfo: {
-    firstName: string;
-    lastName: string;
-    title: string;
-    tagline: string;
-    email: string;
-    phone?: string;
-    location?: string;
-    linkedIn?: string;
-    github?: string;
-    website?: string;
-  };
-  majorExperiences: MajorExperience[];
-  foundationExperiences: FoundationExperience[];
-  education: Education[];
-  skills: {
-    category: string;
-    items: string[];
-  }[];
-  languages: {
-    name: string;
-    level: string;
-  }[];
-  interests?: string[];
+export interface SkillGroup {
+  category: string;
+  items: string[];
 }
 
+export interface Language {
+  name: string;
+  level: string;
+}
+
+export interface CVData {
+  personalInfo: PersonalInfo;
+  experiences: Experience[];
+  projects: Project[];
+  previousExperiences: PreviousExperience[];
+  education: Education[];
+  skills: SkillGroup[];
+  languages: Language[];
+}

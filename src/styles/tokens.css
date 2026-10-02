@@ -1,0 +1,43 @@
+/* Design tokens : moderne, imprimable, 100 % texte. */
+:root {
+  --font-display: Fraunces, Georgia, 'Times New Roman', serif;
+  --font-body: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+
+  --ink: #23271f;
+  --ink-2: #4f554a;
+  --ink-3: #737a6d;
+
+  --navy: #234134;
+  --navy-deep: #355e49;
+  --accent: #3f6b55;
+  --teal: #5f8a72;
+  --teal-soft: #e7efe8;
+  --wood: #9a6b3f;
+  --wood-soft: #c9a27a;
+
+  --paper: #ffffff;
+  --side-bg: #f5f1e8;
+  --rule: #d9d6cc;
+  --on-dark: #ffffff;
+  --on-dark-muted: #e6efe6;
+  --screen-bg: #e8e6df;
+
+  --fs-h1: 24pt;
+  --fs-title: 11pt;
+  --fs-h2: 9.5pt;
+  --fs-h3: 10pt;
+  --fs-body: 9.5pt;
+  --fs-small: 8.5pt;
+
+  --lh: 1.4;
+
+  --sheet-w: 210mm;
+  --sheet-h: 297mm;
+  --margin: 13mm;
+  --header-pad-y: 9mm;
+  --gutter: 6mm;
+  --side-w: 62mm;
+
+  --gap-section: 4.6mm;
+  --gap-item: 4.5mm;
+}

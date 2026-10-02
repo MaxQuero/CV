@@ -1,88 +1,52 @@
-/**
- * Page : fond décoratif autour d’une zone document `.cvSheet` (zone imprimable A4
- * à 10 mm de marge : 190 mm × 277 mm).
- */
-.root {
-  position: relative;
-  isolation: isolate;
-  min-height: 100vh;
-  background-color: var(--color-background-default);
-  background-image: var(--gradient-page-wash), var(--gradient-background);
-  background-repeat: no-repeat;
-}
-
-.root::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  pointer-events: none;
-  opacity: 0.04;
-  background-image: var(--texture-grain);
-  background-size: var(--texture-grain-tile) var(--texture-grain-tile);
-  mix-blend-mode: multiply;
-}
-
-.root > * {
-  position: relative;
-  z-index: 1;
-}
-
-.mainCapture {
-  box-sizing: border-box;
-  padding: var(--spacing-sm) var(--page-bleed-inline);
-  padding-bottom: var(--spacing-md);
-  /* Feuille A4 plus étroite que la fenêtre : défilement horizontal si besoin */
-  overflow-x: auto;
-}
-
-/**
- * Document unique : même boîte à l’écran (largeur zone type A4 sans marge navigateur)
- * et flux naturel à l’impression.
- * --cv-sheet-w / --cv-sheet-min-h ≈ 210−20 mm × 297−20 mm (marges ~10 mm).
- */
-.cvSheet {
-  width: var(--cv-sheet-w);
-  max-width: 100%;
-  min-height: var(--cv-sheet-min-h);
-  margin-inline: auto;
-  box-sizing: border-box;
-  line-height: var(--line-height-normal);
-}
-
-.grid {
-  align-items: stretch;
-}
-
-/* Colonnes de même hauteur : le contenu remplit la cellule (sidebar + expériences). */
-.grid > :global(.MuiGrid-item) {
+/* Feuille A4 : même boîte à l'écran et à l'impression. */
+.sheet {
+  width: var(--sheet-w);
+  height: var(--sheet-h);
+  margin: 12mm auto;
+  background: var(--paper);
+  box-shadow: 0 2px 16px rgb(0 0 0 / 0.14);
+  overflow: hidden;
   display: flex;
   flex-direction: column;
 }
 
+.columns {
+  display: grid;
+  grid-template-columns: 1fr var(--side-w);
+  flex: 1;
+  min-height: 0;
+}
+
+.mainCol,
+.sideCol {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-section);
+  min-width: 0;
+}
+
+.mainCol {
+  padding: 7mm var(--gutter) var(--margin) var(--margin);
+}
+
+.sideCol {
+  padding: 7mm var(--margin) var(--margin) var(--gutter);
+  background: var(--side-bg);
+}
+
 @media print {
-  .root {
-    min-height: 0;
+  .sheet {
+    margin: 0;
+    box-shadow: none;
+    page-break-after: avoid;
   }
+}
 
-  .root::before {
-    display: none;
-  }
-
-  .mainCapture {
-    padding: 0;
-    padding-bottom: 0;
-  }
-
-  .cvSheet {
+@media screen and (max-width: 220mm) {
+  .sheet {
     width: 100%;
-    min-height: 0;
-    max-width: none;
-  }
-
-  /* Ne pas forcer `static` sur les cartes à liseret : sinon les ::before/::after
-     se positionnent par rapport au conteneur parent au lieu de la Card. */
-  .grid :global(.MuiPaper-root:not(.card-liseret)) {
-    position: static !important;
+    height: auto;
+    margin: 0;
+    box-shadow: none;
   }
 }

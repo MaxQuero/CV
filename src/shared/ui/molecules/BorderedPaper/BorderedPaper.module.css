@@ -1,7 +1,0 @@
-.root {
-  border-radius: var(--radius-lg);
-  border: none;
-  background: var(--background-card);
-  background-color: #f0e4d4;
-  box-shadow: var(--shadow-card);
-}

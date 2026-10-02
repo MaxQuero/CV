@@ -4,152 +4,99 @@ export const cvData: CVData = {
   personalInfo: {
     firstName: 'Maxime',
     lastName: 'QUERO',
-    title: 'Senior Fullstack Engineer | Référent Technique | AI-Augmented Engineering',
-    tagline:
-      '11 ans d’expérience. Architecture (Clean, Hexagonal, DDD), qualité logicielle et delivery industrialisé par agents IA.',
+    title: 'Senior Fullstack & Cloud Engineer · IA appliquée & Architecture · 11 ans',
+    highlights: [
+      { label: 'Fullstack & Cloud', text: 'TypeScript, Node.js, React\nGCP, AWS, Terraform (IaC)' },
+      { label: 'Architecture', text: 'Clean / Hexagonale\névénementielle, ADR' },
+      { label: 'Contextes critiques', text: 'Paiement, banque\nPCI-DSS, DSP2' },
+      { label: 'Agents IA', text: 'Claude Code, MCP\ncontext engineering' },
+    ],
     email: 'maxime.quero@gmail.com',
     phone: '06 41 75 77 61',
     location: 'Nantes (44)',
     linkedIn: 'https://www.linkedin.com/in/maxime-quero',
     github: 'https://github.com/MaxQuero',
   },
-  majorExperiences: [
+  experiences: [
     {
-      type: 'major',
-      company: 'Conserto (HiPay)',
-      position: 'Senior Fullstack Engineer & Référent Tech',
-      startDate: 'Jan 2024',
-      endDate: 'Aujourd\'hui',
-      star: {
-        situation:
-          'Référent technique & innovation en contexte PCI-DSS, en charge de la modernisation du delivery.',
-        task: '',
-        action: [
-          'Architecture : discovery et conception d\'une V2 modulaire d\'intégration de moyens de paiement (Google Pay...).',
-          'AI-augmented engineering : socle de context engineering (CLAUDE.md, ADRs, skills, MCP Jira) pour implémenter un ticket de bout en bout par agent, sous revue humaine.',
-          'Expertise : refonte du connecteur Node Shopify (Terraform/GCP) et logique de multi-paiement complexe.'
-        ],
-        result:
-          'Socle V2 évolutif ; Shopify et Mix Payment en production ; POC d\'ajout automatisé de moyens de paiement par IA, industrialisation fin 2026.',
-      },
-      technologies: ['Node / React', 'TypeScript', 'GCP', 'Terraform', 'Claude Code / MCP', 'Archi Clean / Hexagonale', 'DDD'],
+      company: 'Conserto',
+      client: 'HiPay',
+      sector: 'paiement omnicanal',
+      position: 'Senior Fullstack Engineer · Référent technique & IA',
+      startDate: 'Jan. 2024',
+      endDate: 'Aujourd’hui',
+      location: 'Nantes',
+      achievements: [
+        '**Agents IA** : déployé le context engineering dans l’équipe (CLAUDE.md, ADRs, skills, MCP), tickets livrés de bout en bout sous revue humaine.',
+        '**POC IA** : conçu un flux d’agents automatisant l’ajout d’un moyen de paiement.',
+        '**Cloud & IaC** : provisionné l’infra GCP (Cloud Run, Pub/Sub) en Terraform.',
+        '**SDK JS marchands** : conçu et réalisé la refonte, architecture V2 modulaire d’intégration des moyens de paiement (ANCV, Google Pay…).',
+        '**Mix Payment** (carte cadeau + carte bancaire) : conçu l’architecture et la compensation des transactions en erreur.',
+        '**Connecteur Shopify** (PCI-DSS, DSP2) : piloté techniquement le projet et conçu son architecture événementielle Pub/Sub.',
+      ],
+      technologies: ['TypeScript', 'Node.js', 'React', 'GCP', 'Terraform', 'Claude Code', 'MCP'],
     },
     {
-      type: 'major',
-      company: 'Conserto (SNCF Connect & Vecteur Plus)',
-      position: 'Senior Fullstack Engineer & Cloud',
-      startDate: 'Jan 2023',
-      endDate: 'Déc 2023',
-      star: {
-        situation:
-          'Moderniser les infrastructures Cloud et fiabiliser les processus de déploiement sur des missions courtes à fort enjeu technique.',
-        task: '',
-        action: [
-          'SNCF Connect : Modernisation des infrastructures Cloud et evolutions de la stack et de la pyramide de tests (Playwright/Vitest).',
-          'Vecteur Plus : Conception et réalisation d’un bloc d’authentification centralisé et déploiement via AWS (SDK & CDK).',        ],
-        result: 'Modernsisation des releases et développements d\'évolutions.'
-      },
-      technologies: ['TypeScript', 'Node.js', 'React', 'AWS CDK', 'Playwright', 'Vite'],
+      company: 'Conserto',
+      client: 'SNCF Connect, Vecteur Plus',
+      position: 'Senior Fullstack & Cloud Engineer',
+      startDate: 'Jan. 2023',
+      endDate: 'Déc. 2023',
+      location: 'Nantes',
+      achievements: [
+        '**SNCF Connect** : livré des fonctionnalités React / Node.js sur AWS, migré Serverless vers CDK, Mocha vers Playwright et Jest vers Vitest.',
+        '**Vecteur Plus** : conçu et développé le bloc d’authentification de l’écosystème (Node.js, AWS Lambda, API Gateway, CDK).',
+      ],
+      technologies: ['TypeScript', 'Node.js', 'React', 'AWS Lambda', 'AWS CDK', 'Playwright', 'Vitest'],
     },
     {
-      type: 'major',
-      company: 'Conserto (My Money Bank)',
+      company: 'Conserto',
+      client: 'My Money Bank',
+      sector: 'regroupement de crédits',
       position: 'Fullstack Engineer',
-      startDate: 'Oct 2021',
-      endDate: 'Déc 2022',
-      star: {
-        situation: ' Faire évoluer et garantir l\'UX et la stabilitéde la plateforme métier eSofi (regroupement de crédits) dans un contexte critique bancaire.',
-        task: '',
-        action: [
-          'Conception fullstack (React/Node) et intégration d\'évolutions pour challenger le besoin métier (regroupement de crédits).',
-          'Run & Monitoring : Déploiement de la stack sur Kubernetes et support métier direct de niveau 2.'
-        ],
-        result: 'Continuité de service assurée avec succès durant la transition d\'acquisition, et accélération de la résolution des incidents.'
-      },
-      technologies: ['Node.js / React', 'GraphQL / Apollo', 'RabbitMQ', 'Kubernetes', 'Grafana'],
+      startDate: 'Oct. 2021',
+      endDate: 'Déc. 2022',
+      location: 'Nantes',
+      achievements: [
+        '**Plateforme eSofi** : livré des évolutions fullstack (React, Node.js, GraphQL), assuré le run et la continuité de service pendant l’acquisition.',
+      ],
+      technologies: ['Node.js', 'React', 'GraphQL', 'Apollo', 'RabbitMQ', 'Kubernetes', 'Grafana'],
     },
   ],
-  foundationExperiences: [
+  projects: [
     {
-      type: 'foundation',
-      period: '2020 - 2021',
-      company: 'Conserto (EP)',
-      position: 'Frontend engineer',
-      description:
-        '',
-      technologies: ['Angular', 'TypeScript', 'Docker'],
+      name: 'Prism',
+      description: 'prévision de la consommation électrique française',
+      period: '2026',
+      status: 'en cours',
+      achievements: [
+        '**Prévision à 24 h** : évalué Chronos (modèle de fondation) sur données RTE, MAPE 2,5 % contre 6,6 % pour la baseline, sur 73 fenêtres.',
+        '**Service ML** : développé en Python hexagonal (FastAPI, pandas, pytest).',
+      ],
+      technologies: ['Python', 'FastAPI', 'Chronos', 'pandas', 'pytest', 'Docker'],
     },
-    {
-      type: 'foundation',
-      period: '2019 - 2020',
-      company: 'Fifty Truck',
-      position: 'Fullstack engineer JS/PHP',
-      description:
-        '',
-      technologies: ['Laravel', 'Angular', 'Ionic'],
-    },
-    {
-      type: 'foundation',
-      period: '2017 - 2019',
-      company: 'Digital Garden & Start-up Palace',
-      position: 'Fullstack PHP/JS',
-      description: '',
-      technologies: ['Symfony', 'Drupal 8', 'Angular'],
-    },
-    {
-      type: 'foundation',
-      period: '2014 - 2016',
-      company: 'CGI (Alternance)',
-      position: 'Fullstack e-commerce engineer',
-      description:
-        '',
-      technologies: ['Magento', 'Symfony 2', 'Zend'],
-    },
+  ],
+  previousExperiences: [
+    { period: '2020 – 2021', company: 'EP (Conserto)', position: 'Frontend Engineer', technologies: ['Angular', 'TypeScript'] },
+    { period: '2019 – 2020', company: 'Fifty Truck', position: 'Fullstack Engineer', technologies: ['Laravel', 'Angular'] },
+    { period: '2017 – 2019', company: 'Digital Garden, Start-up Palace', position: 'Fullstack Engineer', technologies: ['Symfony'] },
+    { period: '2014 – 2016', company: 'CGI (alternance)', position: 'Fullstack Engineer e-commerce', technologies: ['Magento'] },
   ],
   education: [
-    {
-      year: '2016',
-      level: 'BAC +5',
-      degree: 'Expert en informatique et S.I.',
-      school: 'EPSI Lille (59)',
-    },
-    {
-      year: '2013',
-      level: 'BAC +2',
-      degree: 'DUT Informatique',
-      school: 'IUT LANNION (22)',
-    },
+    { year: '2016', degree: 'Expert en informatique et S.I. (Bac+5)', school: 'EPSI Lille' },
+    { year: '2013', degree: 'DUT Informatique (Bac+2)', school: 'IUT Lannion' },
   ],
   skills: [
-    {
-      category: 'Frontend',
-      items: ['React', 'TypeScript', 'Vite'],
-    },
-    {
-      category: 'Backend',
-      items: ['Node.js', 'GraphQL', 'Symfony'],
-    },
-    {
-      category: 'Cloud & Infrastructure',
-      items: ['GCP', 'AWS', 'Terraform', 'K8s'],
-    },
-    {
-      category: 'Architecture & Méthodologies',
-      items: ['DDD', 'Clean Arch.', 'SOLID', 'PCI-DSS'],
-    },
-    {
-      category: 'IA & Delivery',
-      items: ['Claude Code', 'MCP', 'Agents', 'Context engineering'],
-    },
+    { category: 'Langages', items: ['TypeScript', 'JavaScript', 'Python', 'SQL', 'PHP'] },
+    { category: 'Frontend', items: ['React', 'Vite', 'Angular', 'Playwright', 'Vitest'] },
+    { category: 'Backend', items: ['Node.js', 'Express', 'GraphQL', 'REST', 'FastAPI', 'RabbitMQ'] },
+    { category: 'Cloud & DevOps', items: ['GCP (Cloud Run, Pub/Sub)', 'AWS (Lambda, CDK)', 'Terraform', 'Kubernetes', 'Docker', 'CI/CD'] },
+    { category: 'Architecture', items: ['Clean / Hexagonale', 'DDD', 'Événementielle', 'ADR', 'SOLID', 'PCI-DSS', 'DSP2'] },
+    { category: 'IA & Data', items: ['Claude Code', 'Cursor', 'MCP', 'Context engineering', 'Chronos', 'pandas', 'Backtesting'] },
   ],
   languages: [
-    {
-      name: 'Anglais',
-      level: 'C1 (TOEIC 945/990)',
-    },
-    {
-      name: 'Français',
-      level: 'Natif',
-    },
+    { name: 'Français', level: 'Langue maternelle' },
+    { name: 'Anglais', level: 'C1 · TOEIC 945/990' },
+    { name: 'Espagnol', level: 'Intermédiaire' },
   ],
 };

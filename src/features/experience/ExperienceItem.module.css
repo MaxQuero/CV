@@ -1,0 +1,71 @@
+.item {
+  display: flex;
+  flex-direction: column;
+  gap: 1mm;
+}
+
+.head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 4mm;
+}
+
+.position {
+  font-size: var(--fs-h3);
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.dates {
+  flex-shrink: 0;
+  font-size: var(--fs-small);
+  font-weight: 600;
+  color: var(--wood);
+  white-space: nowrap;
+}
+
+.company {
+  font-size: var(--fs-body);
+  color: var(--ink-2);
+}
+
+.location {
+  color: var(--ink-3);
+}
+
+.achievements {
+  padding-left: 3.5mm;
+  list-style: disc;
+  color: var(--ink);
+}
+
+.achievements li {
+  padding-left: 0.5mm;
+}
+
+.achievements strong {
+  font-weight: 600;
+  color: var(--navy);
+}
+
+.achievements li::marker {
+  color: var(--wood-soft);
+}
+
+.stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.2mm;
+  margin-top: 0.6mm;
+}
+
+.tag {
+  font-size: 7.8pt;
+  font-weight: 500;
+  line-height: 1;
+  padding: 0.9mm 1.8mm;
+  border-radius: 1.2mm;
+  background: var(--teal-soft);
+  color: var(--accent);
+}

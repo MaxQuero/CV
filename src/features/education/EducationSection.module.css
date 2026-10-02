@@ -1,0 +1,15 @@
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.8mm;
+}
+
+.degree {
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.meta {
+  font-size: var(--fs-small);
+  color: var(--ink-3);
+}
