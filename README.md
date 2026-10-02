@@ -11,6 +11,14 @@ bun run build
 bun run lint
 ```
 
+## Publication web
+
+```bash
+bun run deploy
+```
+
+Compile le CV et le publie sur https://maxquero.github.io/ (branche `gh-pages` du dépôt `maxquero.github.io`). Les versions précédentes restent dans l'historique de cette branche.
+
 ## Export PDF
 
 1. Ouvrir le CV dans Chrome / Edge.

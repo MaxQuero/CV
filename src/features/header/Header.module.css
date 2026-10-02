@@ -79,3 +79,22 @@
   line-height: 1.35;
   color: var(--on-dark-muted);
 }
+
+@media screen and (max-width: 220mm) {
+  .header {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      'identity'
+      'contact'
+      'highlights';
+  }
+
+  .contact {
+    text-align: left;
+  }
+
+  .highlights {
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 3mm;
+  }
+}

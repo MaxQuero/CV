@@ -41,3 +41,9 @@
   --gap-section: 4.6mm;
   --gap-item: 4.5mm;
 }
+
+@media screen and (max-width: 220mm) {
+  :root {
+    --margin: 5mm;
+  }
+}

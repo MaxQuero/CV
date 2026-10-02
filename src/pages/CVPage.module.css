@@ -49,4 +49,16 @@
     margin: 0;
     box-shadow: none;
   }
+
+  .columns {
+    grid-template-columns: 1fr;
+  }
+
+  .mainCol {
+    padding: 6mm var(--margin);
+  }
+
+  .sideCol {
+    padding: 6mm var(--margin) 8mm;
+  }
 }

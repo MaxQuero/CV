@@ -69,3 +69,10 @@
   background: var(--teal-soft);
   color: var(--accent);
 }
+
+@media screen and (max-width: 220mm) {
+  .head {
+    flex-wrap: wrap;
+    gap: 0 4mm;
+  }
+}
