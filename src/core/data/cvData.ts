@@ -6,7 +6,7 @@ export const cvData: CVData = {
     lastName: 'QUERO',
     title: 'Senior Fullstack Engineer · IA appliquée & Architecture',
     highlights: [
-      { label: 'Fullstack · 11 ans', text: 'TypeScript, Node.js, React\nGCP, AWS' },
+      { label: 'Fullstack & Cloud', text: '11 ans · TypeScript, React\nNode.js, GCP, AWS' },
       { label: 'Architecture', text: 'Clean / Hexagonale\névénementielle, ADR' },
       { label: 'Contextes critiques', text: 'Paiement, banque\nPCI-DSS, DSP2' },
       { label: 'Agents IA', text: 'Claude Code, MCP\ncontext engineering' },
