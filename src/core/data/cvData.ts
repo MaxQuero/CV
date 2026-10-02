@@ -29,9 +29,10 @@ export const cvData: CVData = {
       achievements: [
         '**Agents IA** : déployé le context engineering dans l’équipe (CLAUDE.md, ADRs, skills, MCP), tickets livrés de bout en bout sous revue humaine.',
         '**POC IA** : conçu un flux d’agents automatisant l’ajout d’un moyen de paiement.',
+        '**Cloud & IaC** : provisionné l’infra GCP (Cloud Run, Pub/Sub) en Terraform.',
         '**SDK JS marchands** : conçu et réalisé la refonte, architecture V2 modulaire d’intégration des moyens de paiement (ANCV, Google Pay…).',
         '**Mix Payment** (carte cadeau + carte bancaire) : conçu l’architecture et la compensation des transactions en erreur.',
-        '**Connecteur Shopify** (PCI-DSS, DSP2) : piloté techniquement le projet et conçu son architecture événementielle Pub/Sub sur GCP (Terraform).',
+        '**Connecteur Shopify** (PCI-DSS, DSP2) : piloté techniquement le projet et conçu son architecture événementielle Pub/Sub.',
       ],
       technologies: ['TypeScript', 'Node.js', 'React', 'GCP', 'Terraform', 'Claude Code', 'MCP'],
     },
@@ -70,7 +71,7 @@ export const cvData: CVData = {
       status: 'en cours',
       achievements: [
         '**Prévision à 24 h** : évalué Chronos (modèle de fondation) sur données RTE, MAPE 2,5 % contre 6,6 % pour la baseline, sur 73 fenêtres.',
-        '**Service ML** : développé en Python selon une architecture hexagonale (FastAPI, pandas), avec Pyright strict, pytest et Docker.',
+        '**Service ML** : développé en Python hexagonal (FastAPI, pandas, pytest).',
       ],
       technologies: ['Python', 'FastAPI', 'Chronos', 'pandas', 'pytest', 'Docker'],
     },
