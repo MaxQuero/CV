@@ -17,7 +17,7 @@ bun run lint
 bun run deploy
 ```
 
-Compile le CV et le publie sur https://maxquero.github.io/ (branche `gh-pages` du dépôt `maxquero.github.io`). Les versions précédentes restent dans l'historique de cette branche.
+Compile le CV et le publie sur https://maxquero.github.io/ (branche `master` du dépôt `maxquero.github.io`, servie par GitHub Pages). Les versions précédentes restent dans l'historique de cette branche.
 
 ## Export PDF
 

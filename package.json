@@ -8,7 +8,7 @@
     "preview": "vite preview",
     "lint": "eslint . --ext .ts,.tsx",
     "format": "prettier --write .",
-    "deploy": "vite build && gh-pages -d dist -b gh-pages -r git@github.com:MaxQuero/maxquero.github.io.git --nojekyll -m 'Deploy CV'"
+    "deploy": "vite build && gh-pages -d dist -b master -r git@github.com:MaxQuero/maxquero.github.io.git --nojekyll -m 'Deploy CV'"
   },
   "dependencies": {
     "@fontsource/fraunces": "^5.3.0",
