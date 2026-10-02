@@ -4,9 +4,9 @@ export const cvData: CVData = {
   personalInfo: {
     firstName: 'Maxime',
     lastName: 'QUERO',
-    title: 'Senior Fullstack Engineer · IA appliquée & Architecture',
+    title: 'Senior Fullstack & Cloud Engineer · IA appliquée & Architecture · 11 ans',
     highlights: [
-      { label: 'Fullstack & Cloud', text: '11 ans · TypeScript, React\nNode.js, GCP, AWS' },
+      { label: 'Fullstack & Cloud', text: 'TypeScript, Node.js, React\nGCP, AWS, Terraform (IaC)' },
       { label: 'Architecture', text: 'Clean / Hexagonale\névénementielle, ADR' },
       { label: 'Contextes critiques', text: 'Paiement, banque\nPCI-DSS, DSP2' },
       { label: 'Agents IA', text: 'Claude Code, MCP\ncontext engineering' },
